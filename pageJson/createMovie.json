@@ -1,85 +1,78 @@
 {
-    "title": "Create User",
-    "jsonPage": "viewExpert",
+    "title": "Create Movie",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "firstName",
+        "name": "Name",
         "type": "text",
-        "tableRef": "firstName",
+        "tableRef": "name",
         "placeholder": "Enter name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "lastName",
+        "name": "Synopsis",
         "type": "text",
-        "tableRef": "lastName",
-        "placeholder": "Enter name",
-        "id": "input1",
+        "tableRef": "synopsis",
+        "placeholder": "Enter synopsis",
+        "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Email",
-        "type": "email",
-        "tableRef": "email",
-        "placeholder": "Enter Email",
-        "id": "input4",
+        "name": "Release Type",
+        "type": "select",
+        "tableRef": "releasetype",
+        "id": "input3",
         "validation": ["required", "trim", "unique"],
-        "url": ""
-
+        "url": [{
+              "value":"Upcoming",
+                "name": "upcoming"
+            }, {
+              "value":"Recent",
+                "name": "recent"
+            }, {
+              "value":"Past",
+                "name": "past"
+            }]
     }, {
-        "name": "Password",
-        "type": "text",
-        "tableRef": "password",
-        "placeholder": "Enter Password",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Mobile No",
-        "type": "text",
-        "tableRef": "mobileno",
-        "placeholder": "Enter Mobile No",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-
-    }, {
-        "name": "Age",
-        "type": "text",
-        "tableRef": "age",
-        "placeholder": "Enter Age",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-
-    }, {
-        "name": "Image",
+        "name": "Banner",
         "type": "image",
-        "tableRef": "image",
-        "placeholder": "Enter Profile Picture",
+        "tableRef": "bigImage",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": ""
-
+    }, {
+        "name": "Small Image",
+        "type": "image",
+        "tableRef": "smallImage",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Medium Image",
+        "type": "image",
+        "tableRef": "mediumImage",
+        "id": "input6",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Cut Image",
+        "type": "image",
+        "tableRef": "cutImage",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewExpert'})"
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
 
     "apiCall": {
-        "url": "expertuser/saveData"
-    },
-
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+        "url": "movie/save"
+    }
 }

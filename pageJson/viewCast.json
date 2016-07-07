@@ -1,5 +1,5 @@
 {
-    "title": "All Testimonials",
+    "title": "All Movies",
     "desciption": "",
     "pageType": "view",
     "fields": [{
@@ -7,14 +7,13 @@
             "isSort": "",
             "tableRef": "name"
         }, {
-            "name": "Testimonial",
+            "name": "Actor",
             "isSort": "",
-            "tableRef": "testimonial"
+            "tableRef": "bigImage"
         }, {
             "name": "Image",
             "isSort": "",
-            "tableRef": "image",
-            "type": "image"
+            "tableRef": "image"
         }
 
     ],
@@ -23,17 +22,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editTestimonial",
+        "jsonPage": "editMovie",
         "fieldsToSend": ["_id"],
-        "callFindOne": "testimonial/getOne"
+        "callFindOne": "movie/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
         "title": "Delete User",
-        "content": "Are you sure you want to delete user?",
-        "api": "testimonial/delete",
+        "content": "Are you sure you want to delete movie?",
+        "api": "movie/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -52,7 +51,7 @@
     }],
     "filter": [{
         "name": "category",
-        "url": "http://chaitalee.com/user/getAll"
+        "url": "http://chaitalee.com/expertuser/getAll"
     }, {
         "name": "uploadcsv",
         "icon": "delete",
@@ -60,8 +59,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "testimonial/getAll",
+        "url": "movie/findLimited",
         "params": ""
     },
-    "createButtonState": "page({jsonName:'createTestimonial'})"
+    "createButtonState": "page({jsonName:'createMovie'})"
 }

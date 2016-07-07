@@ -40,11 +40,8 @@
                 <!-- <md-datepicker ng-model="" md-placeholder="Enter date"></md-datepicker> -->
 
             </div>
-            <!-- <div ng-if="field.type=='date'">
-                              <md-datepicker ng-model="field.model" md-placeholder="Enter date"></md-datepicker>
-                          </div> -->
             <div ng-if="field.type=='image'">
-                <label for="">Upload Image</label>
+                <label for="">{{field.name}}</label>
                 <!-- <img ng-src="{{field.image|uploadpath}}"> -->
                 <upload-image ng-model="field.model" no-view></upload-image>
                 <div class="">
@@ -52,12 +49,6 @@
                 </div>
             </div>
         </md-input-container>
-        <!--
-    <div ng-if="field.type=='image'">
-        <label for="">Upload Image</label>
-        <img ng-src="{{field.image|uploadpath}}">
-        <upload-image ng-model="field.model"></upload-image>
-    </div> -->
 
         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <md-button class="md-raised md-primary" ng-click="makeReadyForApi()" ng-class="{'disabled' : !plan.$valid }">Save</md-button>
