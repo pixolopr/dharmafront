@@ -1,0 +1,117 @@
+{
+    "title": "Experts Education",
+    "desciption": "",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+            "name": "degreeTitle",
+            "isSort": "",
+            "tableRef": "degreeTitle"
+        }, {
+            "name": "instituteName",
+            "isSort": "",
+            "tableRef": "instituteName"
+        }, {
+            "name": "yearOfPassing",
+            "isSort": "",
+            "tableRef": "yearOfPassing"
+        }
+
+    ],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editExpertEducation",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete User",
+        "content": "Are you sure you want to delete user?",
+        "api": "expertuser/deleteEdu",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "button": [{
+        "name": "excelexport",
+        "icon": "print",
+        "color": "blue",
+        "action": "excelexport"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+    "filter": [{
+        "name": "category",
+        "url": "http://chaitalee.com/expertuser/getAll"
+    }, {
+        "name": "uploadcsv",
+        "icon": "delete",
+        "color": "red",
+        "action": "uploadcsv"
+    }],
+    "apiCall": {
+        "url": "expertuser/getOne",
+        "params": "_id"
+    },
+    "createButtonState": "page({jsonName:'createExpertEducation'})",
+    "sidemenu": [{
+        "name": "Expert Details",
+        "action": "sidemenuRedirect",
+        "jsonPage": "editExpert",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Educational Qualification",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertEducation",
+        "fieldsToSend": [1, 2],
+        "callFindOne": "expertuser/getOneEducationQualification"
+    }, {
+        "name": "Awards",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertAwards",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Experience",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertExperience",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Call Settings",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertcallSettings",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Video Links",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertvideoLinks",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Publication Links",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertpublicationLinks",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }, {
+        "name": "Add Photos",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewExpertaddPhotos",
+        "fieldsToSend": [1],
+        "callFindOne": "expertuser/getOne"
+    }]
+}
