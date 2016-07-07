@@ -1,5 +1,5 @@
 {
-    "title": "All Movies",
+    "title": "All Cast",
     "desciption": "",
     "pageType": "view",
     "fields": [{
@@ -22,17 +22,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editMovie",
+        "jsonPage": "editCast",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/getOne"
+        "callFindOne": "movie/findOneCast"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete User",
-        "content": "Are you sure you want to delete movie?",
-        "api": "movie/delete",
+        "title": "Delete Cast",
+        "content": "Are you sure you want to delete cast?",
+        "api": "movie/deleteCast",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -59,8 +59,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findLimited",
-        "params": ""
+        "url": "movie/findCast",
+        "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createMovie'})"
+    "createButtonState": "page({jsonName:'createCast'})"
 }

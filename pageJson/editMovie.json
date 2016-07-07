@@ -110,7 +110,7 @@
       "action":"sidemenuRedirect",
       "jsonPage":"viewCast",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findCast"
     },{
       "name":"Crew",
       "action":"sidemenuRedirect",
