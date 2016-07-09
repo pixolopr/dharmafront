@@ -62,5 +62,55 @@
         "url": "movie/findCast",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createCast'})"
+    "createButtonState": "page({jsonName:'createCast'})",
+    "sidemenu": [{
+      "name":"Movie Details",
+      "action":"sidemenuRedirect",
+      "jsonPage":"editMovie",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    },
+    {
+      "name":"Cast",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewCast",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findCast"
+    },{
+      "name":"Crew",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewExpertAwards",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    },{
+      "name":"News",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewExpertAwards",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    },{
+      "name":"Gallery",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewExpertAwards",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    },{
+      "name":"Videos",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewExpertAwards",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    },{
+      "name":"Wallpaper",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewExpertAwards",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    },{
+      "name":"Awards",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewExpertAwards",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findOne"
+    }]
 }

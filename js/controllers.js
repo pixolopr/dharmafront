@@ -1,7 +1,7 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload','ui.bootstrap'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap'])
 
 .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.menutitle = NavigationService.makeactive("Login");
@@ -147,53 +147,52 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
                 console.log($scope.json);
                 $scope.api1 = $scope.json.sidemenu[1].callFindOne;
-                if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
-                    // ARRAY
-                    $scope.pagination1._id = urlid1;
-                    NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
-                        if (data.data.nominee) {
-                            $scope.json.tableData = data.data;
-                            console.log("IF");
-                            console.log($scope.json.tableData);
-                        }
-                    }, function() {
-                        console.log("fail");
-                    });
-                } else {
-                    console.log("ELSE");
-                    pagination._id = urlid1;
-                    NavigationService.sideMenu1($scope.api1, pagination, function(data) {
-                        $scope.json.tableData = data.data.data;
-                        console.log($scope.json.tableData);
-                    }, function() {
-                        console.log("fail");
-                    });
-                }
+                // if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
+                //     // ARRAY
+                //     $scope.pagination1._id = urlid1;
+                //     NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
+                //         if (data.data.nominee) {
+                //             $scope.json.tableData = data.data;
+                //             console.log("IF");
+                //             console.log($scope.json.tableData);
+                //         }
+                //     }, function() {
+                //         console.log("fail");
+                //     });
+                // } else {
+                //     console.log("ELSE");
+                //     pagination._id = urlid1;
+                //     NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
+                //         $scope.json.tableData = data.data.data;
+                //         console.log($scope.json.tableData);
+                //     }, function() {
+                //         console.log("fail");
+                //     });
+                // }
             }
             // call api for view data
             $scope.pageInfo = {};
-             $scope.getMoreResults = function() {
-                 NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
-                   console.log(findData);
-                     if (findData.value !== false) {
-                         if (findData.data && findData.data.data && findData.data.data.length > 0) {
-                             $scope.pageInfo.lastpage = findData.data.totalpages;
-                             $scope.pageInfo.pagenumber = $scope.pagination.pagenumber;
-                             $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
-                             $scope.json.tableData = findData.data.data;
-                         } else {
-                             $scope.json.tableData = [];
-                         }
-                     }
-                      else {
-                         $scope.json.tableData = [];
-                     }
-                 }, function() {
-                     console.log("Fail");
-                 });
-             };
-             $scope.getMoreResults();
-         }
+            $scope.getMoreResults = function() {
+                NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
+                    console.log(findData);
+                    if (findData.value !== false) {
+                        if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                            $scope.pageInfo.lastpage = findData.data.totalpages;
+                            $scope.pageInfo.pagenumber = $scope.pagination.pagenumber;
+                            $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                            $scope.json.tableData = findData.data.data;
+                        } else {
+                            $scope.json.tableData = [];
+                        }
+                    } else {
+                        $scope.json.tableData = [];
+                    }
+                }, function() {
+                    console.log("Fail");
+                });
+            };
+            $scope.getMoreResults();
+        }
         $scope.template = TemplateService.jsonType(data.pageType);
     });
 
@@ -566,20 +565,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('HeaderCtrl', function($scope, TemplateService, NavigationService, $state) {
-  $scope.logOut = function() {
-      NavigationService.logout(function(data) {
-          console.log(data);
-          if (data.value === true) {
-              $.jStorage.flush();
-              $state.go("login");
+    $scope.logOut = function() {
+        NavigationService.logout(function(data) {
+            console.log(data);
+            if (data.value === true) {
+                $.jStorage.flush();
+                $state.go("login");
 
-          } else if (data.value === false) {
-              $window.location.reload();
-          }
-      }, function() {
-          console.log("Fail");
-      });
-  };
+            } else if (data.value === false) {
+                $window.location.reload();
+            }
+        }, function() {
+            console.log("Fail");
+        });
+    };
     $scope.template = TemplateService;
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
