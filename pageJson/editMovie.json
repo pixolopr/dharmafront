@@ -34,9 +34,10 @@
     }, {
         "name": "Release Type",
         "type": "select",
-        "tableRef": "releasetype",
+        "tableRef": "releaseType",
+        "model": "releaseType",
         "id": "input3",
-        "model": "releasetype",
+        "model": "releaseType",
         "validation": ["required", "trim", "unique"],
         "url": [{
               "value":"Upcoming",
@@ -90,7 +91,7 @@
         "stateName": "page({jsonName:'viewMovie'})"
     }],
     "apiCall": {
-        "url": "movie/saveData",
+        "url": "movie/save",
         "params": "_id"
     },
     "preApi": {

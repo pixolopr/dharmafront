@@ -22,7 +22,7 @@
     }, {
         "name": "Release Type",
         "type": "select",
-        "tableRef": "releasetype",
+        "tableRef": "releaseType",
         "id": "input3",
         "validation": ["required", "trim", "unique"],
         "url": [{
