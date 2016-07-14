@@ -1,5 +1,5 @@
 // var adminurl = "http://blazen.io/";
-var adminurl = "http://192.168.1.107:1337/";
+var adminurl = "http://192.168.1.109:1337/";
 var imgurl = "http://146.148.4.222/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";

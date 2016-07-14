@@ -1,5 +1,5 @@
 {
-    "title": "All Cast",
+    "title": "All Crew",
     "desciption": "",
     "pageType": "view",
     "fields": [{
@@ -7,9 +7,9 @@
             "isSort": "",
             "tableRef": "name"
         }, {
-            "name": "Actor",
+            "name": "Title",
             "isSort": "",
-            "tableRef": "bigImage"
+            "tableRef": "title"
         }
 
     ],
@@ -18,17 +18,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editCast",
+        "jsonPage": "editCrew",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneCast"
+        "callFindOne": "movie/findOneCrew"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Cast",
-        "content": "Are you sure you want to delete cast?",
-        "api": "movie/deleteCast",
+        "title": "Delete Crew",
+        "content": "Are you sure you want to delete crew?",
+        "api": "movie/deleteCrew",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -55,10 +55,10 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findCast",
+        "url": "movie/findCrew",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createCast'})",
+    "createButtonState": "page({jsonName:'createCrew'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",

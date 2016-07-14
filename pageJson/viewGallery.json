@@ -1,15 +1,15 @@
 {
-    "title": "All Cast",
+    "title": "All Gallery",
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "Name",
+            "name": "Image",
             "isSort": "",
-            "tableRef": "name"
+            "tableRef": "image"
         }, {
-            "name": "Actor",
+            "name": "Order",
             "isSort": "",
-            "tableRef": "bigImage"
+            "tableRef": "order"
         }
 
     ],
@@ -18,17 +18,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editCast",
+        "jsonPage": "editGallery",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneCast"
+        "callFindOne": "movie/findOneGallery"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Cast",
-        "content": "Are you sure you want to delete cast?",
-        "api": "movie/deleteCast",
+        "title": "Delete Gallery",
+        "content": "Are you sure you want to delete gallery?",
+        "api": "movie/deleteGallery",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -58,7 +58,7 @@
         "url": "movie/findCast",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createCast'})",
+    "createButtonState": "page({jsonName:'createGallery'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",

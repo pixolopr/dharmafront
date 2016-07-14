@@ -1,0 +1,61 @@
+{
+    "title": "Edit Award",
+    "jsonPage": "viewAward",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Year Name",
+        "type": "text",
+        "tableRef": "awardname",
+        "model": "awardname",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Title",
+        "type": "text",
+        "tableRef": "title",
+        "model": "title",
+        "placeholder": "Enter title",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Winner",
+        "type": "text",
+        "tableRef": "winner",
+        "model": "winner",
+        "placeholder": "Enter winner",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Year",
+        "type": "text",
+        "tableRef": "year",
+        "model": "year",
+        "placeholder": "Enter year",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "action": "cancelUser",
+        "stateName": "page({jsonName:'viewAward'})"
+    }],
+    "apiCall": {
+        "url": "movie/saveDataAward",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "movie/findOneAward",
+        "params": "_id"
+    }
+
+}

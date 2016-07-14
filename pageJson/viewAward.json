@@ -1,15 +1,15 @@
 {
-    "title": "All Cast",
+    "title": "All Award",
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "Name",
+            "name": "Title",
             "isSort": "",
-            "tableRef": "name"
+            "tableRef": "title"
         }, {
-            "name": "Actor",
+            "name": "Winner",
             "isSort": "",
-            "tableRef": "bigImage"
+            "tableRef": "winner"
         }
 
     ],
@@ -18,17 +18,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editCast",
+        "jsonPage": "editAward",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneCast"
+        "callFindOne": "movie/findOneAward"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Cast",
-        "content": "Are you sure you want to delete cast?",
-        "api": "movie/deleteCast",
+        "title": "Delete Award",
+        "content": "Are you sure you want to delete award?",
+        "api": "movie/deleteAward",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -58,7 +58,7 @@
         "url": "movie/findCast",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createCast'})",
+    "createButtonState": "page({jsonName:'createAward'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",

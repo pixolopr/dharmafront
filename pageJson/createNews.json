@@ -1,0 +1,59 @@
+{
+    "title": "Create News",
+    "jsonPage": "viewNews",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [
+      {
+          "name": "Title",
+          "type": "text",
+          "tableRef": "title",
+          "placeholder": "Enter title",
+          "id": "input2",
+          "validation": ["required", "trim", "unique"],
+          "url": ""
+      },{
+        "name": "Link",
+        "type": "text",
+        "tableRef": "link",
+        "placeholder": "Enter link",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+      "name": "Image",
+      "type": "text",
+      "tableRef": "image",
+      "placeholder": "Enter image",
+      "id": "input1",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+  } ,{
+    "name": "Text",
+    "type": "text",
+    "tableRef": "text",
+    "placeholder": "Enter text",
+    "id": "input1",
+    "validation": ["required", "trim", "unique"],
+    "url": ""
+},{
+  "name": "Date",
+  "type": "date",
+  "tableRef": "date",
+  "placeholder": "Enter date",
+  "id": "input1",
+  "validation": ["required", "trim", "unique"],
+  "url": ""
+} ],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewNews'})"
+    }],
+
+    "apiCall": {
+        "url": "movie/saveNews"
+    }
+}

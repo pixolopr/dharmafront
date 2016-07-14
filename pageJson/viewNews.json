@@ -1,15 +1,15 @@
 {
-    "title": "All Cast",
+    "title": "All News",
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "Name",
+        "name": "Title",
+        "isSort": "",
+        "tableRef": "title"
+    },{
+            "name": "Link",
             "isSort": "",
-            "tableRef": "name"
-        }, {
-            "name": "Actor",
-            "isSort": "",
-            "tableRef": "bigImage"
+            "tableRef": "link"
         }
 
     ],
@@ -18,17 +18,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editCast",
+        "jsonPage": "editNews",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneCast"
+        "callFindOne": "movie/findOneNews"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Cast",
-        "content": "Are you sure you want to delete cast?",
-        "api": "movie/deleteCast",
+        "title": "Delete News",
+        "content": "Are you sure you want to delete crew?",
+        "api": "movie/deleteNews",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -55,10 +55,10 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findCast",
+        "url": "movie/findNews",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createCast'})",
+    "createButtonState": "page({jsonName:'createNews'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",
