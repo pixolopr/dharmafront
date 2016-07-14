@@ -9,11 +9,13 @@
         }, {
             "name": "Banner",
             "isSort": "",
-            "tableRef": "bigImage"
+            "tableRef": "bigImage",
+            "type":"image"
         }, {
             "name": "Image",
             "isSort": "",
-            "tableRef": "smallImage"
+            "tableRef": "smallImage",
+            "type":"image"
         }
 
     ],

@@ -108,6 +108,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
 
+            // get select fields dropdown
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "selectFromTable") {
+                    NavigationService.getDropDown(n.url, function(data) {
+                        console.log(data);
+                        n.dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+
+
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                if (!n.dropDownName) {
+                                    dropdown.name = data.data[i].name;
+                                } else {
+                                    dropdown.name = data.data[i][n.dropDownName];
+                                }
+
+                                n.dropdownvalues.push(dropdown);
+                            }
+
+
+                        }
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+            });
         } else if (data.pageType == "edit") {
             console.log("Edit");
             // $scope.json.editData.educationalQualification=[];
@@ -115,6 +143,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
 
                 $scope.json.editData = data.data;
+                _.each($scope.json.fields, function(n) {
+               if (n.type == "time" || n.type == "date") {
+                   $scope.json.editData[n.model] = new Date($scope.json.editData[n.model]);
+               }
+           });
                 console.log($scope.json.editData);
                 // console.log('.educationalQualification',$scope.json.editData.educationalQualification);
                 // $scope.json.editDataTime =
@@ -126,13 +159,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log("Fail");
             });
 
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "selectFromTable") {
+                    NavigationService.getDropDown(n.url, function(data) {
+                        console.log(data);
+                        n.dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                if (!n.dropDownName) {
+                                    dropdown.name = data.data[i].name;
+                                } else {
+                                    dropdown.name = data.data[i][n.dropDownName];
+                                }
+                                n.dropdownvalues.push(dropdown);
+                            }
+                        }
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+            });
+
         } else if (data.pageType == "view") {
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
             $scope.pagination = {
                 "search": "",
                 "pagenumber": "1",
-                "pagesize": "1"
+                "pagesize": "5"
             };
             // SIDE MENU DATA
             var urlid1 = $location.absUrl().split('%C2%A2')[1];

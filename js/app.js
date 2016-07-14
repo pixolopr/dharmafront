@@ -80,11 +80,19 @@ firstapp.filter('getValue', function($filter) {
             _.each(keyArr, function(n) {
                 returnValue = returnValue[n];
             });
-            // console.log(type);
+            console.log(type);
             if (type == "date") {
+                console.log('in date');
                 // return new Date(returnValue);
                 return $filter("date")(returnValue, "medium");
-            } else if (type != "image") {
+            }if (type == "longdate") {
+                console.log('in date');
+                // return new Date(returnValue);
+                return $filter("date")(returnValue, "longDate");
+            }if(type == "time"){
+              console.log('in time');
+              return $filter("date")(returnValue, "shortTime");
+            } if (type != "image") {
                 return returnValue;
             } else {
                 return $filter("uploadpath")(returnValue, 100, 100, "fill");

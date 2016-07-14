@@ -3,13 +3,22 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
-        "name": "Title",
-        "isSort": "",
-        "tableRef": "title"
-    },{
+            "name": "Title",
+            "isSort": "",
+            "tableRef": "title"
+        }, {
             "name": "Link",
             "isSort": "",
             "tableRef": "link"
+        }, {
+            "name": "Movie",
+            "isSort": "",
+            "tableRef": "movie.name"
+        }, {
+            "name": "Image",
+            "isSort": "",
+            "tableRef": "image",
+            "type":"image"
         }
 
     ],
@@ -18,7 +27,7 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "edit",
+        "jsonPage": "editNews",
         "fieldsToSend": ["_id"],
         "callFindOne": "news/findOne"
     }, {
@@ -55,7 +64,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "news/find",
+        "url": "news/findLimited",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createNews'})"
