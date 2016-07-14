@@ -36,57 +36,6 @@
     "preApi": {
         "url": "movie/findOneGallery",
         "params": "_id"
-    },
-
-    "sidemenu": [{
-      "name":"Movie Details",
-      "action":"sidemenuRedirect",
-      "jsonPage":"editMovie",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },
-    {
-      "name":"Cast",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertEducation",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Crew",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"News",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Gallery",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Videos",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Wallpaper",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Awards",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    }]
+    }
 
 }

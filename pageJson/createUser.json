@@ -74,12 +74,5 @@
 
     "apiCall": {
         "url": "user/saveData"
-    },
-
-    "sidemenu": [{
-        "url": "",
-        "anchor": "",
-        "state": "",
-        "action": ""
-    }]
+    }
 }

@@ -18,17 +18,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editNews",
+        "jsonPage": "edit",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneNews"
+        "callFindOne": "news/findOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete News",
+        "title": "Delete ",
         "content": "Are you sure you want to delete crew?",
-        "api": "movie/deleteNews",
+        "api": "news/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -55,58 +55,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findNews",
+        "url": "news/find",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createNews'})",
-    "sidemenu": [{
-      "name":"Movie Details",
-      "action":"sidemenuRedirect",
-      "jsonPage":"editMovie",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },
-    {
-      "name":"Cast",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewCast",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findCast"
-    },{
-      "name":"Crew",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"News",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Gallery",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Videos",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Wallpaper",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
-      "name":"Awards",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    }]
+    "createButtonState": "page({jsonName:'createNews'})"
 }

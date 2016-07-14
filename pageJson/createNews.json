@@ -5,7 +5,7 @@
     "pageType": "create",
     "fields": [{
       "name": "Movie",
-      "type": "select",
+      "type": "selectFromTable",
       "tableRef": "movie",
       "placeholder": "Enter movie",
       "id": "input1",
