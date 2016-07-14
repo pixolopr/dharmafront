@@ -3,8 +3,15 @@
     "jsonPage": "viewNews",
     "desciption": "",
     "pageType": "create",
-    "fields": [
-      {
+    "fields": [{
+      "name": "Movie",
+      "type": "select",
+      "tableRef": "movie",
+      "placeholder": "Enter movie",
+      "id": "input1",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+  },{
           "name": "Title",
           "type": "text",
           "tableRef": "title",
