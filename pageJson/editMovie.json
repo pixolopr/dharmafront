@@ -119,12 +119,6 @@
       "fieldsToSend":[1],
       "callFindOne":"movie/findOne"
     },{
-      "name":"News",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },{
       "name":"Gallery",
       "action":"sidemenuRedirect",
       "jsonPage":"viewExpertAwards",

@@ -36,6 +36,14 @@
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    },{
+        "name": "Thumbnail",
+        "type": "image",
+        "tableRef": "thumbnail",
+        "placeholder": "Enter thumbnail",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
