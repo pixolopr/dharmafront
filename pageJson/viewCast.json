@@ -2,6 +2,7 @@
     "title": "All Cast",
     "desciption": "",
     "pageType": "view",
+      "urlFields": ["_id"],
     "fields": [{
             "name": "Name",
             "isSort": "",
