@@ -2,10 +2,13 @@
     "title": "All Videos",
     "desciption": "",
     "pageType": "view",
+    "sendIdWithCreate": true,
+      "urlFields": ["_id"],
     "fields": [{
             "name": "Thumbnail",
             "isSort": "",
-            "tableRef": "image"
+            "tableRef": "thumbnail",
+            "type": "image"
         }, {
             "name": "Order",
             "isSort": "",

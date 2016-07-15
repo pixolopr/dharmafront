@@ -2,6 +2,7 @@
     "title": "Create Cast",
     "jsonPage": "viewCast",
     "desciption": "",
+      "urlFields": ["movie"],
     "pageType": "create",
     "fields": [{
         "name": "Name",
@@ -14,8 +15,8 @@
     }, {
         "name": "Actor",
         "type": "text",
-        "tableRef": "synopsis",
-        "placeholder": "Enter synopsis",
+        "tableRef": "actor",
+        "placeholder": "Enter actor",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""

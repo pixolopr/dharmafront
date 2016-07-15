@@ -2,6 +2,8 @@
     "title": "All Award",
     "desciption": "",
     "pageType": "view",
+    "sendIdWithCreate": true,
+      "urlFields": ["_id"],
     "fields": [{
             "name": "Title",
             "isSort": "",

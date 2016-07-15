@@ -2,6 +2,7 @@
     "title": "All Cast",
     "desciption": "",
     "pageType": "view",
+    "sendIdWithCreate": true,
       "urlFields": ["_id"],
     "fields": [{
             "name": "Name",
