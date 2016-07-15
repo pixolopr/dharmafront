@@ -50,7 +50,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'jsonViewCtrl'
     });
 
-    $urlRouterProvider.otherwise("/page/userView");
+    $urlRouterProvider.otherwise("/login");
 
 });
 

@@ -7,12 +7,7 @@ var uploadurl = adminurl + "upload/";
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
-  var navigation = [{
-    name: "Users",
-    classis: "active",
-    link: "#/page/userView",
-    subnav: []
-  }, {
+  var navigation = [ {
     name: "Movies",
     classis: "active",
     link: "#/page/viewMovie",

@@ -33,7 +33,7 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewCast'})"
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
 
     "apiCall": {

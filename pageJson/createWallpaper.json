@@ -36,7 +36,7 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewWallpaper'})"
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
 
     "apiCall": {

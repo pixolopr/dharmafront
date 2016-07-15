@@ -15,7 +15,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value === true) {
                 $state.go("page", {
-                    jsonName: "userView"
+                    jsonName: "viewMovie"
                 });
                 $.jStorage.set("user", data);
             } else if (data.value === false) {
@@ -110,10 +110,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           _.each($scope.json.fields, function(n) {
               if (n.type == "select") {
                   n.model = "";
-                  n.url.unshift({
-                      "value": "",
-                      "name": "SELECT"
-                  });
+                  // n.url.unshift({
+                  //     "value": "",
+                  //     "name": "SELECT"
+                  // });
                   if (n.name == "Status") {
                       n.model = true;
                   }
@@ -326,6 +326,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
           });
           $scope.formData = data;
           if (jsonArr[1]) {
+            console.log(jsonArr[1]);
+            console.log($scope.json.urlFields[0]);
               $scope.formData[$scope.json.urlFields[0]] = jsonArr[1];
           }
       } else {

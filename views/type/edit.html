@@ -25,12 +25,18 @@
                 <label>{{field.name}}</label>
                 <input ng-model="json.editData[field.model]" type="text" readonly="true" name="{{field.name}}" id="{{field.id}}">
             </div>
-            <div ng-if="field.type=='select'">
+            <!-- <div ng-if="field.type=='select'">
                 <label>{{field.name}}</label>
                 <md-select ng-model="json.editData[field.model]">
                     <md-option ng-repeat="item in field.url" value="{{item._id}}">{{item.name}}</md-option>
                 </md-select>
-            </div>
+            </div> -->
+            <div ng-if="field.type=='select'">
+             <label>{{field.name}}</label>
+             <md-select ng-model="json.editData[field.model]">
+                 <md-option ng-repeat="item in field.url" value="{{item.value}}" ng-if="item">{{item.name}}</md-option>
+             </md-select>
+         </div>
             <div ng-if="field.type=='selectFromTable'">
 
                 <label for="{{field.id}}">{{field.name}}</label>

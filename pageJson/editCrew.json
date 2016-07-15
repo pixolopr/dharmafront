@@ -29,7 +29,7 @@
     }, {
         "name": "cancel",
         "action": "cancelUser",
-        "stateName": "page({jsonName:'viewCrew'})"
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
     "apiCall": {
         "url": "movie/saveCrew",

@@ -27,7 +27,7 @@
     }, {
         "name": "cancel",
         "action": "cancelUser",
-        "stateName": "page({jsonName:'viewGallery'})"
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
     "apiCall": {
         "url": "movie/saveGallery",

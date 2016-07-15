@@ -23,7 +23,7 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewGallery'})"
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
 
     "apiCall": {
