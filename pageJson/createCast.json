@@ -36,6 +36,6 @@
     }],
 
     "apiCall": {
-        "url": "movie/save"
+        "url": "movie/saveCast"
     }
 }

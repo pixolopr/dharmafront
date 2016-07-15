@@ -5,7 +5,7 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Year Name",
+        "name": "Award Name",
         "type": "text",
         "tableRef": "awardname",
         "model": "awardname",
@@ -50,11 +50,11 @@
         "stateName": "page({jsonName:'viewAward'})"
     }],
     "apiCall": {
-        "url": "movie/saveDataAward",
+        "url": "movie/saveAwards",
         "params": "_id"
     },
     "preApi": {
-        "url": "movie/findOneAward",
+        "url": "movie/findOneAwards",
         "params": "_id"
     }
 

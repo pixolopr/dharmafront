@@ -20,7 +20,7 @@
         "action": "redirect",
         "jsonPage": "editAward",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneAward"
+        "callFindOne": "movie/findOneAwards"
     }, {
         "name": "delete",
         "icon": "delete",
@@ -28,7 +28,7 @@
         "action": "apiCallConfirm",
         "title": "Delete Award",
         "content": "Are you sure you want to delete award?",
-        "api": "movie/deleteAward",
+        "api": "movie/deleteAwards",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -55,7 +55,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findCast",
+        "url": "movie/findAwards",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createAward'})",
@@ -75,32 +75,32 @@
     },{
       "name":"Crew",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewCrew",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findCrew"
     },{
       "name":"Gallery",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewGallery",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findGallery"
     },{
       "name":"Videos",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewVideos",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findVideos"
     },{
       "name":"Wallpaper",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewWallpaper",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findWallpaper"
     },{
       "name":"Awards",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewAward",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findAwards"
     }]
 }

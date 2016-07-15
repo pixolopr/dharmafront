@@ -1,10 +1,10 @@
 {
-    "title": "Create Year",
-    "jsonPage": "viewYear",
+    "title": "Create Award",
+    "jsonPage": "viewAward",
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Year Name",
+        "name": "Award Name",
         "type": "text",
         "tableRef": "awardname",
         "placeholder": "Enter name",
@@ -41,10 +41,10 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewYear'})"
+        "stateName": "page({jsonName:'viewAward'})"
     }],
 
     "apiCall": {
-        "url": "movie/saveYear"
+        "url": "movie/saveAwards"
     }
 }

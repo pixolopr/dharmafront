@@ -1,11 +1,12 @@
 {
-    "title": "All Gallery",
+    "title": "All Wallpaper",
     "desciption": "",
     "pageType": "view",
     "fields": [{
             "name": "Image",
             "isSort": "",
-            "tableRef": "image"
+            "tableRef": "image",
+            "type":"image"
         }, {
             "name": "Order",
             "isSort": "",
@@ -18,17 +19,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editGallery",
+        "jsonPage": "editWallpaper",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneGallery"
+        "callFindOne": "movie/findOneWallpaper"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Gallery",
-        "content": "Are you sure you want to delete gallery?",
-        "api": "movie/deleteGallery",
+        "title": "Delete Wallpaper",
+        "content": "Are you sure you want to delete wallpaper?",
+        "api": "movie/deleteWallpaper",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -55,10 +56,10 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findCast",
+        "url": "movie/findWallpaper",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createGallery'})",
+    "createButtonState": "page({jsonName:'createWallpaper'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",
@@ -75,32 +76,32 @@
     },{
       "name":"Crew",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewCrew",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findCrew"
     },{
       "name":"Gallery",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewGallery",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findGallery"
     },{
       "name":"Videos",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewVideos",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findVideos"
     },{
       "name":"Wallpaper",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewWallpaper",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findWallpaper"
     },{
       "name":"Awards",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewAward",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findAwards"
     }]
 }

@@ -16,9 +16,9 @@
     }, {
         "name": "Actor",
         "type": "text",
-        "tableRef": "synopsis",
-        "model": "synopsis",
-        "placeholder": "Enter synopsis",
+        "tableRef": "actor",
+        "model": "actor",
+        "placeholder": "Enter actor",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
@@ -40,11 +40,11 @@
         "stateName": "page({jsonName:'viewCast'})"
     }],
     "apiCall": {
-        "url": "movie/saveData",
+        "url": "movie/saveCast",
         "params": "_id"
     },
     "preApi": {
-        "url": "movie/findOne",
+        "url": "movie/findOneCast",
         "params": "_id"
     }
 

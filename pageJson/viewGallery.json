@@ -5,7 +5,8 @@
     "fields": [{
             "name": "Image",
             "isSort": "",
-            "tableRef": "image"
+            "tableRef": "image",
+            "type":"image"
         }, {
             "name": "Order",
             "isSort": "",
@@ -55,7 +56,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findCast",
+        "url": "movie/findGallery",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createGallery'})",
@@ -75,32 +76,32 @@
     },{
       "name":"Crew",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewCrew",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findCrew"
     },{
       "name":"Gallery",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewGallery",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findGallery"
     },{
       "name":"Videos",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewVideos",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findVideos"
     },{
       "name":"Wallpaper",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewWallpaper",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findWallpaper"
     },{
       "name":"Awards",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewAward",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findAwards"
     }]
 }

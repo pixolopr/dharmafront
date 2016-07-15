@@ -1,15 +1,19 @@
 {
-    "title": "All Gallery",
+    "title": "All Videos",
     "desciption": "",
     "pageType": "view",
     "fields": [{
-            "name": "Image",
+            "name": "Thumbnail",
             "isSort": "",
             "tableRef": "image"
         }, {
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
+        }, {
+            "name": "Url",
+            "isSort": "",
+            "tableRef": "url"
         }
 
     ],
@@ -18,17 +22,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editGallery",
+        "jsonPage": "editVideos",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneGallery"
+        "callFindOne": "movie/findOneVideos"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Gallery",
-        "content": "Are you sure you want to delete gallery?",
-        "api": "movie/deleteGallery",
+        "title": "Delete Videos",
+        "content": "Are you sure you want to delete videos?",
+        "api": "movie/deleteVideos",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -55,10 +59,10 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findCast",
+        "url": "movie/findVideos",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createGallery'})",
+    "createButtonState": "page({jsonName:'createVideos'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",
@@ -75,32 +79,32 @@
     },{
       "name":"Crew",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewCrew",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findCrew"
     },{
       "name":"Gallery",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewGallery",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findGallery"
     },{
       "name":"Videos",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewVideos",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findVideos"
     },{
       "name":"Wallpaper",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewWallpaper",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findWallpaper"
     },{
       "name":"Awards",
       "action":"sidemenuRedirect",
-      "jsonPage":"viewExpertAwards",
+      "jsonPage":"viewAward",
       "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
+      "callFindOne":"movie/findAwards"
     }]
 }

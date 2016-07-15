@@ -30,7 +30,7 @@
         "stateName": "page({jsonName:'viewGallery'})"
     }],
     "apiCall": {
-        "url": "movie/saveDataGallery",
+        "url": "movie/saveGallery",
         "params": "_id"
     },
     "preApi": {
