@@ -28,12 +28,12 @@
                     </md-select>
                 </div> -->
 
-                <div ng-if="field.type=='select'">
-              <label>{{field.name}}</label>
-              <md-select ng-model="json.editData[field.model]">
-                  <md-option ng-repeat="item in field.url" value="{{item.value}}">{{item.name}}</md-option>
-              </md-select>
-          </div>
+            <div ng-if="field.type=='select'">
+                <label>{{field.name}}</label>
+                <md-select ng-model="json.editData[field.model]">
+                    <md-option ng-repeat="item in field.url" value="{{item.value}}">{{item.name}}</md-option>
+                </md-select>
+            </div>
             <div ng-if="field.type=='selectFromTable'">
                 <label for="{{field.id}}">{{field.name}} </label>
                 <br>
@@ -61,9 +61,15 @@
                     <img ng-src="{{field.model | uploadpath:250:250:'fill'}}" ng-if="field.model" />
                 </div>
             </div>
+            <div ng-if="field.type=='chips'" ng-init="field.model=[]">
+                <label for="">{{field.name}}</label>
+                <md-chips ng-model="field.model" placeholder="Enter a tag"></md-chips>
+                <br/>
+            </div>
         </md-input-container>
 
         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <!-- <md-button class="md-raised md-primary" ng-if="json.needTag==true" ng-click="saveWithTag(abc)" ng-class="{'disabled' : !plan.$valid }">Save</md-button> -->
             <md-button class="md-raised md-primary" ng-click="makeReadyForApi()" ng-class="{'disabled' : !plan.$valid }">Save</md-button>
             <md-button class="md-raised md-warn" ui-sref="{{json.action[1].stateName}}">Cancel</md-button>
         </section>

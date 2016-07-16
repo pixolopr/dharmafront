@@ -10,10 +10,6 @@
             "name": "Url",
             "isSort": "",
             "tableRef": "url"
-        }, {
-            "name": "Tag",
-            "isSort": "",
-            "tableRef": "tag"
         },{
             "name": "Thumbnail",
             "isSort": "",

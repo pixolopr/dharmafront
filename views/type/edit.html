@@ -65,6 +65,11 @@
                 <span style="float: right;">{{field.size}}</span>
                 <upload-image ng-model="json.editData[field.model]" no-view></upload-image>
             </div>
+            <div ng-if="field.type=='chips'">
+                <label for="">{{field.name}}</label>
+                <md-chips ng-model="json.editData[field.model]" ng-if="json.editData[field.model]"></md-chips>
+                <br/>
+            </div>
         </md-input-container>
         <!-- <md-list ng-cloak>
             <md-list-item ng-if="field.type=='image'" ng-repeat="field in json.fields">

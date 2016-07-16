@@ -20,8 +20,8 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "tag",
-        "type": "text",
+        "name": "Tag",
+        "type": "chips",
         "tableRef": "tag",
         "placeholder": "Enter tag",
         "id": "input2",

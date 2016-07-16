@@ -40,162 +40,165 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
-  //Used to name the .html file
-  $scope.template = TemplateService.changecontent("users");
-  $scope.menutitle = NavigationService.makeactive("Users");
-  TemplateService.title = $scope.menutitle;
-  $scope.navigation = NavigationService.getnav();
-  var jsonArr = $stateParams.jsonName.split("¢");
-  var jsonName = jsonArr[0];
-  var urlParams = {};
-  $scope.dropdown = {};
-  $scope.dropdownvalues = [];
-  $scope.sidemenuVal = $stateParams;
-  var jsonParam1 = jsonArr[1];
-  var jsonParam2 = jsonArr[2];
-  var jsonParam3 = jsonArr[3];
-  var jsonParam4 = jsonArr[4];
-  var jsonParam5 = jsonArr[5];
-  var jsonParam6 = jsonArr[6];
-  var jsonParam7 = jsonArr[7];
-  var jsonParam8 = jsonArr[8];
-  var jsonParam9 = jsonArr[9];
-  // console.log(jsonArr);
+    //Used to name the .html file
+    $scope.template = TemplateService.changecontent("users");
+    $scope.menutitle = NavigationService.makeactive("Users");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+    var jsonArr = $stateParams.jsonName.split("¢");
+    var jsonName = jsonArr[0];
+    var urlParams = {};
+    $scope.dropdown = {};
+    $scope.abc = {};
+    $scope.abc.tag = [];
+    $scope.dropdownvalues = [];
+    $scope.sidemenuVal = $stateParams;
+    var jsonParam1 = jsonArr[1];
+    var jsonParam2 = jsonArr[2];
+    var jsonParam3 = jsonArr[3];
+    var jsonParam4 = jsonArr[4];
+    var jsonParam5 = jsonArr[5];
+    var jsonParam6 = jsonArr[6];
+    var jsonParam7 = jsonArr[7];
+    var jsonParam8 = jsonArr[8];
+    var jsonParam9 = jsonArr[9];
+    // console.log(jsonArr);
 
 
 
-  $scope.confirm = function(title, content, api, data) {
-      var confirm = $mdDialog.confirm()
-          .title(title)
-          .textContent(content)
-          .ok('Confirm')
-          .cancel('Cancel');
-      $mdDialog.show(confirm).then(function() {
-          $http.post(api, data).success(function(data) {
-              $state.reload();
-              showToast("Deleted Successfully");
-          }, function() {
-              showToast("Error Deleting");
-          });
-      }, function() {
+    $scope.confirm = function(title, content, api, data) {
+        var confirm = $mdDialog.confirm()
+            .title(title)
+            .textContent(content)
+            .ok('Confirm')
+            .cancel('Cancel');
+        $mdDialog.show(confirm).then(function() {
+            $http.post(api, data).success(function(data) {
+                $state.reload();
+                showToast("Deleted Successfully");
+            }, function() {
+                showToast("Error Deleting");
+            });
+        }, function() {
 
-      });
-  };
+        });
+    };
 
-  $http.get("./pageJson/" + jsonName + ".json").success(function(data) {
-      _.each(data.urlFields, function(n, key) {
-          urlParams[n] = jsonArr[key + 1];
-      });
-      console.log(urlParams);
-      $scope.json = data;
-      console.log($scope.json);
-      if ($scope.json.sidemenu && $scope.json.sidemenu.length > 0) {
-          $scope.sidemenuThere = true;
-      }
-      var idForCreate = $location.absUrl().split('%C2%A2')[1];
+    $http.get("./pageJson/" + jsonName + ".json").success(function(data) {
+        _.each(data.urlFields, function(n, key) {
+            urlParams[n] = jsonArr[key + 1];
+        });
+        console.log(urlParams);
+        $scope.json = data;
+        console.log($scope.json);
+        if ($scope.json.sidemenu && $scope.json.sidemenu.length > 0) {
+            $scope.sidemenuThere = true;
+        }
+        var idForCreate = $location.absUrl().split('%C2%A2')[1];
 
-      console.log(idForCreate);
-      $scope.idForCreate = idForCreate;
-      if (idForCreate) {
-          $scope.goToCreatePage = function() {
-              console.log("In create");
-              $location.url("/page/" + $scope.json.createButtonUrl + idForCreate);
-          };
+        console.log(idForCreate);
+        $scope.idForCreate = idForCreate;
+        if (idForCreate) {
+            $scope.goToCreatePage = function() {
+                console.log("In create");
+                $location.url("/page/" + $scope.json.createButtonUrl + idForCreate);
+            };
 
-      }
-      if (data.pageType == "create") {
-          $scope.goToCancelPageCreate = function() {
-              $location.url("/page/" + $scope.json.action[1].url + idForCreate);
-          };
-          _.each($scope.json.fields, function(n) {
-              if (n.type == "select") {
-                  n.model = "";
-                  // n.url.unshift({
-                  //     "value": "",
-                  //     "name": "SELECT"
-                  // });
-                  if (n.name == "Status") {
-                      n.model = true;
-                  }
-              } else if (n.type == "selectFromTable") {
-                  n.model = "";
-              }
-          });
-          // get select fields dropdown
-          _.each($scope.json.fields, function(n) {
-              if (n.type == "selectFromTable") {
-                  NavigationService.getDropDown(n.url, function(data) {
-                      console.log(data);
-                      n.dropdownvalues = [];
-                      if (data) {
-                          for (var i = 0; i < data.data.length; i++) {
-                              var dropdown = {};
-                              dropdown._id = data.data[i]._id;
-                              if (!n.dropDownName) {
-                                  dropdown.name = data.data[i].name;
-                              } else {
-                                  dropdown.name = data.data[i][n.dropDownName];
-                              }
-                              n.dropdownvalues.push(dropdown);
-                          }
-                      }
-                  }, function() {
-                      console.log("Fail");
-                  });
-              }
-          });
-      } else if (data.pageType == "edit" || data.pageType == "tableview") {
-          var urlid1 = $location.absUrl().split('%C2%A2')[1];
-          var urlid2 = $location.absUrl().split('%C2%A2')[2];
-          console.log(urlParams);
-          NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
-              console.log(data);
-              $scope.json.editData = data.data;
-              console.log($scope.json.editData);
-              _.each($scope.json.fields, function(n) {
-                  if (n.type == "table") {
-                      $scope.subTableData = $scope.json.editData[n.model];
-                  }if (n.type == "time" || n.type == "date") {
-                      $scope.json.editData[n.model] = new Date($scope.json.editData[n.model]);
-                  }
+        }
+        if (data.pageType == "create") {
+            $scope.goToCancelPageCreate = function() {
+                $location.url("/page/" + $scope.json.action[1].url + idForCreate);
+            };
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "select") {
+                    n.model = "";
+                    // n.url.unshift({
+                    //     "value": "",
+                    //     "name": "SELECT"
+                    // });
+                    if (n.name == "Status") {
+                        n.model = true;
+                    }
+                } else if (n.type == "selectFromTable") {
+                    n.model = "";
+                }
+            });
+            // get select fields dropdown
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "selectFromTable") {
+                    NavigationService.getDropDown(n.url, function(data) {
+                        console.log(data);
+                        n.dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                if (!n.dropDownName) {
+                                    dropdown.name = data.data[i].name;
+                                } else {
+                                    dropdown.name = data.data[i][n.dropDownName];
+                                }
+                                n.dropdownvalues.push(dropdown);
+                            }
+                        }
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+            });
+        } else if (data.pageType == "edit" || data.pageType == "tableview") {
+            var urlid1 = $location.absUrl().split('%C2%A2')[1];
+            var urlid2 = $location.absUrl().split('%C2%A2')[2];
+            console.log(urlParams);
+            NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
+                console.log(data);
+                $scope.json.editData = data.data;
+                console.log($scope.json.editData);
+                _.each($scope.json.fields, function(n) {
+                    if (n.type == "table") {
+                        $scope.subTableData = $scope.json.editData[n.model];
+                    }
+                    if (n.type == "time" || n.type == "date") {
+                        $scope.json.editData[n.model] = new Date($scope.json.editData[n.model]);
+                    }
 
-              })
-          }, function() {
-              console.log("Fail");
-          });
-          // get select fields dropdown
-          _.each($scope.json.fields, function(n) {
-              if (n.type == "selectFromTable") {
-                  NavigationService.getDropDown(n.url, function(data) {
-                      console.log(data);
-                      n.dropdownvalues = [];
-                      if (data) {
-                          for (var i = 0; i < data.data.length; i++) {
-                              var dropdown = {};
-                              dropdown._id = data.data[i]._id;
-                              if (!n.dropDownName) {
-                                  dropdown.name = data.data[i].name;
-                              } else {
-                                  dropdown.name = data.data[i][n.dropDownName];
-                              }
-                              n.dropdownvalues.push(dropdown);
-                          }
-                      }
-                  }, function() {
-                      console.log("Fail");
-                  });
-              }
-          });
-      } else if (data.pageType == "view") {
-          // call api for view data
-          $scope.apiName = $scope.json.apiCall.url;
-          $scope.pagination = {
-              "search": "",
-              "pagenumber": 1,
-              "pagesize": 10
-          };
+                })
+            }, function() {
+                console.log("Fail");
+            });
+            // get select fields dropdown
+            _.each($scope.json.fields, function(n) {
+                if (n.type == "selectFromTable") {
+                    NavigationService.getDropDown(n.url, function(data) {
+                        console.log(data);
+                        n.dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                if (!n.dropDownName) {
+                                    dropdown.name = data.data[i].name;
+                                } else {
+                                    dropdown.name = data.data[i][n.dropDownName];
+                                }
+                                n.dropdownvalues.push(dropdown);
+                            }
+                        }
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+            });
+        } else if (data.pageType == "view") {
+            // call api for view data
+            $scope.apiName = $scope.json.apiCall.url;
+            $scope.pagination = {
+                "search": "",
+                "pagenumber": 1,
+                "pagesize": 10
+            };
 
-          // SIDE MENU DATA
+            // SIDE MENU DATA
             var urlid1 = $location.absUrl().split('%C2%A2')[1];
             console.log(urlid1);
             // var urlid2 = $location.absUrl().split('%C2%A2')[2];
@@ -235,139 +238,138 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
-          $scope.pageInfo = {};
-          $scope.getMoreResults = function() {
-              NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
-                  console.log(findData);
-                  if (findData.value != false) {
-                      if (findData.data && findData.data.data && findData.data.data.length > 0) {
-                          $scope.pageInfo.lastpage = findData.data.totalpages;
-                          $scope.pageInfo.pagenumber = findData.data.pagenumber;
-                          $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
-                          $scope.json.tableData = findData.data.data;
-                      } else {
-                          $scope.json.tableData = [];
-                      }
-                  } else {
-                      $scope.json.tableData = [];
-                  }
-              }, function() {
-                  console.log("Fail");
-              });
-          };
-          $scope.getMoreResults();
-      }
-      $scope.template = TemplateService.jsonType(data.pageType);
-  });
+            $scope.pageInfo = {};
+            $scope.getMoreResults = function() {
+                NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
+                    console.log(findData);
+                    if (findData.value != false) {
+                        if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                            $scope.pageInfo.lastpage = findData.data.totalpages;
+                            $scope.pageInfo.pagenumber = findData.data.pagenumber;
+                            $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                            $scope.json.tableData = findData.data.data;
+                        } else {
+                            $scope.json.tableData = [];
+                        }
+                    } else {
+                        $scope.json.tableData = [];
+                    }
+                }, function() {
+                    console.log("Fail");
+                });
+            };
+            $scope.getMoreResults();
+        }
+        $scope.template = TemplateService.jsonType(data.pageType);
+    });
 
-  // ACTION
-  $scope.performAction = function(action, result) {
-      console.log(action, result);
-      console.log("in pa");
-      var pageURL = "";
-      if (action.type == "onlyView") {
-          console.log("onlyView");
-          if (action.fieldsToSend) {
-              _.each(action.fieldsToSend, function(n) {
-                  pageURL += $filter("getValue")(result, n);
-              });
-          }
-          console.log(pageURL);
-          $state.go("onlyview", {
-              id: pageURL
-          });
-      }
-      // FOR EDIT
-      if (action.action == 'redirect') {
-          console.log("redirect");
-          pageURL = action.jsonPage;
-          if (action.fieldsToSend) {
-              _.each(action.fieldsToSend, function(n) {
-                  pageURL += "¢" + $filter("getValue")(result, n);
-              });
-          }
-          $state.go("page", {
-              jsonName: pageURL
-          });
-      } else if (action.action == 'apiCallConfirm') {
-          pageURL = adminurl + action.api;
-          var data = {};
-          if (action.fieldsToSend) {
-              _.each(action.fieldsToSend, function(n) {
-                  data[n.name] = $filter("getValue")(result, n.value);
-              });
-          }
-          $scope.confirm(action.title, action.content, pageURL, data);
-      } else if (action.action == 'sidemenuRedirect') {
-          pageURL = action.jsonPage;
-          if (action.fieldsToSend) {
-              _.each(action.fieldsToSend, function(n) {
-                  pageURL += "¢" + jsonArr[n];
-              });
-          }
-          $state.go("page", {
-              jsonName: pageURL
-          });
-      } else if (action.action === 'changeActive') {
-          $scope.defaultActive = action.active;
-      }
-  };
+    // ACTION
+    $scope.performAction = function(action, result) {
+        console.log(action, result);
+        console.log("in pa");
+        var pageURL = "";
+        if (action.type == "onlyView") {
+            console.log("onlyView");
+            if (action.fieldsToSend) {
+                _.each(action.fieldsToSend, function(n) {
+                    pageURL += $filter("getValue")(result, n);
+                });
+            }
+            console.log(pageURL);
+            $state.go("onlyview", {
+                id: pageURL
+            });
+        }
+        // FOR EDIT
+        if (action.action == 'redirect') {
+            console.log("redirect");
+            pageURL = action.jsonPage;
+            if (action.fieldsToSend) {
+                _.each(action.fieldsToSend, function(n) {
+                    pageURL += "¢" + $filter("getValue")(result, n);
+                });
+            }
+            $state.go("page", {
+                jsonName: pageURL
+            });
+        } else if (action.action == 'apiCallConfirm') {
+            pageURL = adminurl + action.api;
+            var data = {};
+            if (action.fieldsToSend) {
+                _.each(action.fieldsToSend, function(n) {
+                    data[n.name] = $filter("getValue")(result, n.value);
+                });
+            }
+            $scope.confirm(action.title, action.content, pageURL, data);
+        } else if (action.action == 'sidemenuRedirect') {
+            pageURL = action.jsonPage;
+            if (action.fieldsToSend) {
+                _.each(action.fieldsToSend, function(n) {
+                    pageURL += "¢" + jsonArr[n];
+                });
+            }
+            $state.go("page", {
+                jsonName: pageURL
+            });
+        } else if (action.action === 'changeActive') {
+            $scope.defaultActive = action.active;
+        }
+    };
 
-  $scope.makeReadyForApi = function() {
-    console.log("Make Ready");
-    console.log($scope.formData);
+    $scope.makeReadyForApi = function() {
+        console.log($scope.formData);
 
-      var data = {};
-      if ($scope.json.pageType !== 'edit' && $scope.json.pageType !== 'tableview') {
-          // CONVERT MODEL NAMES SAME AS FIELD NAMES
-          _.each($scope.json.fields, function(n) {
-              console.log(n);
-              data[n.tableRef] = n.model;
-          });
-          $scope.formData = data;
-          if (jsonArr[1]) {
-            console.log(jsonArr[1]);
-            console.log($scope.json.urlFields[0]);
-              $scope.formData[$scope.json.urlFields[0]] = jsonArr[1];
-          }
-      } else {
-          $scope.formData = $scope.json.editData;
-          console.log($scope.formData);
-      }
+        var data = {};
+        if ($scope.json.pageType !== 'edit' && $scope.json.pageType !== 'tableview') {
+            // CONVERT MODEL NAMES SAME AS FIELD NAMES
+            _.each($scope.json.fields, function(n) {
+                console.log(n);
+                data[n.tableRef] = n.model;
+            });
+            $scope.formData = data;
+            if (jsonArr[1]) {
+                console.log(jsonArr[1]);
+                console.log($scope.json.urlFields[0]);
+                $scope.formData[$scope.json.urlFields[0]] = jsonArr[1];
+            }
+        } else {
+            $scope.formData = $scope.json.editData;
+            console.log($scope.formData);
+        }
 
-      $scope.apiName = $scope.json.apiCall.url;
+        $scope.apiName = $scope.json.apiCall.url;
 
-      console.log($scope.formData);
+        console.log($scope.formData);
 
-      // CALL GENERAL API
-      NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
+        // CALL GENERAL API
+        NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
+            if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
+                $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
 
-          console.log($scope.json.jsonPage);
+            } else if ($scope.json.action[0].submitUrl && $scope.urlid2) {
+                $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid2);
+            } else {
+                $state.go("page", {
+                    jsonName: $scope.json.jsonPage
+                });
+            }
 
-          // showToast("Project Saved Successfully");
-          console.log("Success");
-          if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
-              $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
-
-          } else if ($scope.json.action[0].submitUrl && $scope.urlid2) {
-              $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid2);
-          } else {
-              $state.go("page", {
-                  jsonName: $scope.json.jsonPage
-              });
-          }
-
-      }, function() {
-          // showToast("Error saving the Project");
-          console.log("Fail");
-      });
+        }, function() {
+            // showToast("Error saving the Project");
+            console.log("Fail");
+        });
 
 
-  };
+    };
 
-  $scope.changeit = function(image) {
-      console.log(image);
-  };
+    $scope.saveWithTag = function(tags) {
+        console.log($scope.formData);
+        console.log(tags);
+    };
+
+    $scope.changeit = function(image) {
+        console.log(image);
+    };
 })
 
 .controller('ProjectsCtrl', function($scope, $mdDialog, $mdToast, TemplateService, NavigationService, $timeout, clipboard) {

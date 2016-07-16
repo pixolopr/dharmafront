@@ -24,7 +24,7 @@
         "url": ""
     }, {
         "name": "Tag",
-        "type": "text",
+        "type": "chips",
         "tableRef": "tag",
         "model": "tag",
         "placeholder": "Enter tag",
