@@ -46,6 +46,10 @@
                 </select>
                 <br>
             </div>
+            <div ng-if="field.type=='textarea'">
+                <label>{{field.name}}</label>
+                <textarea style="height:100px;" ng-model="field.model" name="{{field.name}}" id="{{field.id}}"></textarea>
+            </div>
             <div ng-if="field.type=='date'">
                 <label>Date</label>
                 <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->

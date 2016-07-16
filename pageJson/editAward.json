@@ -40,6 +40,15 @@
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    }, {
+        "name": "Note",
+        "type": "text",
+        "tableRef": "note",
+        "model": "note",
+        "placeholder": "Enter note",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",

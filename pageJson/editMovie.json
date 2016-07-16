@@ -24,13 +24,22 @@
         "model": "name"
     }, {
         "name": "Synopsis",
-        "type": "text",
+        "type": "textarea",
         "tableRef": "synopsis",
         "placeholder": "Enter name",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "synopsis"
+    },{
+        "name": "Director's Note",
+        "type": "textarea",
+        "tableRef": "note",
+        "model": "note",
+        "placeholder": "Enter note",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Release Type",
         "type": "select",
