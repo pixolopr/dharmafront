@@ -64,6 +64,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jsonParam9 = jsonArr[9];
     // console.log(jsonArr);
 
+    var urlid1 = $location.absUrl().split('%C2%A2')[1];
+    var urlid2 = $location.absUrl().split('%C2%A2')[2];
+
 
 
     $scope.confirm = function(title, content, api, data) {
@@ -147,8 +150,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             });
         } else if (data.pageType == "edit" || data.pageType == "tableview") {
-            var urlid1 = $location.absUrl().split('%C2%A2')[1];
-            var urlid2 = $location.absUrl().split('%C2%A2')[2];
+
             console.log(urlParams);
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
                 console.log(data);
@@ -162,7 +164,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.json.editData[n.model] = new Date($scope.json.editData[n.model]);
                     }
 
-                })
+                });
             }, function() {
                 console.log("Fail");
             });
@@ -199,9 +201,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
 
             // SIDE MENU DATA
-            var urlid1 = $location.absUrl().split('%C2%A2')[1];
-            console.log(urlid1);
-            // var urlid2 = $location.absUrl().split('%C2%A2')[2];
+
             $scope.pagination1 = {};
             if (urlid1) {
                 console.log('urlid1', urlid1);
@@ -216,24 +216,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     // ARRAY
                     // $scope.pagination1._id = urlid1;
                     $scope.pagination1._id = urlid1;
-                    NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
-                        if (data.data.nominee) {
-                            $scope.json.tableData = data.data;
-                            console.log("IF");
-                            console.log($scope.json.tableData);
-                        }
-                    }, function() {
-                        console.log("fail");
-                    });
+                    // NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
+                    //     if (data.data.nominee) {
+                    //         $scope.json.tableData = data.data;
+                    //         console.log("IF");
+                    //         console.log($scope.json.tableData);
+                    //     }
+                    // }, function() {
+                    //     console.log("fail");
+                    // });
                 } else {
                     console.log("ELSE");
                     $scope.pagination._id = urlid1;
-                    NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
-                        $scope.json.tableData = data.data.data;
-                        console.log($scope.json.tableData);
-                    }, function() {
-                        console.log("fail");
-                    });
+                    // NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
+                    //     $scope.json.tableData = data.data.data;
+                    //     console.log($scope.json.tableData);
+                    // }, function() {
+                    //     console.log("fail");
+                    // });
                 }
             }
             // call api for view data
@@ -242,7 +242,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.getMoreResults = function() {
                 NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
                     console.log(findData);
-                    if (findData.value != false) {
+                    if (findData.value !== false) {
                         if (findData.data && findData.data.data && findData.data.data.length > 0) {
                             $scope.pageInfo.lastpage = findData.data.totalpages;
                             $scope.pageInfo.pagenumber = findData.data.pagenumber;
