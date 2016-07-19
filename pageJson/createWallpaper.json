@@ -1,6 +1,6 @@
 {
     "title": "Create Wallpaper",
-    "jsonPage": "viewWallpaper",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
       "urlFields": ["movie"],

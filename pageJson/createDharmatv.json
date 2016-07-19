@@ -42,7 +42,8 @@
         "placeholder": "Enter thumbnail",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "",
+        "size": "400 x 225px"
     }, {
         "name": "Is banner",
         "type": "select",

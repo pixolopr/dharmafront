@@ -1,6 +1,6 @@
 {
     "title": "Create Videos",
-    "jsonPage": "viewVideos",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
       "urlFields": ["movie"],

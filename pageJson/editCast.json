@@ -1,6 +1,6 @@
 {
     "title": "Edit Cast",
-    "jsonPage": "viewCast",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],

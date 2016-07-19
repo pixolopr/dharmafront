@@ -1,6 +1,6 @@
 {
     "title": "Edit Gallery",
-    "jsonPage": "viewGallery",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],

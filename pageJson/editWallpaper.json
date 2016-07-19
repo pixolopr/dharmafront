@@ -1,6 +1,6 @@
 {
     "title": "Edit Wallpaper",
-    "jsonPage": "viewWallpaper",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],

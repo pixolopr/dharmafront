@@ -1,6 +1,6 @@
 {
     "title": "Create Crew",
-    "jsonPage": "viewCrew",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
       "urlFields": ["movie"],

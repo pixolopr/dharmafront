@@ -1,6 +1,6 @@
 {
     "title": "Edit Award",
-    "jsonPage": "viewAward",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],

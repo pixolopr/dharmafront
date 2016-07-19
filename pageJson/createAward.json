@@ -1,6 +1,6 @@
 {
     "title": "Create Award",
-    "jsonPage": "viewAward",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
       "urlFields": ["movie"],

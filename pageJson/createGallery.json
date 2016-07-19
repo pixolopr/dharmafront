@@ -1,6 +1,6 @@
 {
     "title": "Create Gallery",
-    "jsonPage": "viewGallery",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
       "urlFields": ["movie"],

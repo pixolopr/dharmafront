@@ -1,6 +1,6 @@
 {
     "title": "Create Cast",
-    "jsonPage": "viewCast",
+    "jsonPage": "viewMovie",
     "desciption": "",
       "urlFields": ["movie"],
     "pageType": "create",

@@ -1,6 +1,6 @@
 {
     "title": "Edit Videos",
-    "jsonPage": "viewVideos",
+    "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
