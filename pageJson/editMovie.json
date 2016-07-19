@@ -1,156 +1,159 @@
 {
-    "title": "Edit Movie",
-    "jsonPage": "viewMovie",
-    "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
-    "fields": [{
-        "name": "Id",
-        "type": "hidden",
-        "tableRef": "_id",
-        "placeholder": "Enter First Name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "_id"
-    }, {
-        "name": "Name",
-        "type": "text",
-        "tableRef": "name",
-        "placeholder": "Enter name",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "name"
-    }, {
-        "name": "Synopsis",
-        "type": "textarea",
-        "tableRef": "synopsis",
-        "placeholder": "Enter name",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "synopsis"
-    },{
-        "name": "Director's Note",
-        "type": "textarea",
-        "tableRef": "note",
-        "model": "note",
-        "placeholder": "Enter note",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Release Type",
-        "type": "select",
-        "tableRef": "releaseType",
-        "model": "releaseType",
-        "id": "input3",
-        "model": "releaseType",
-        "validation": ["required", "trim", "unique"],
-        "url": [{
-              "value":"Upcoming",
-                "name": "upcoming"
-            }, {
-              "value":"Recent",
-                "name": "recent"
-            }, {
-              "value":"Past",
-                "name": "past"
-            }]
-    },{
-        "name": "Banner",
-        "type": "image",
-        "tableRef": "bigImage",
-        "model": "bigImage",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Small Image",
-        "type": "image",
-        "model": "smallImage",
-        "tableRef": "smallImage",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Medium Image",
-        "type": "image",
-        "model": "mediumImage",
-        "tableRef": "mediumImage",
-        "id": "input6",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Cut Image",
-        "type": "image",
-        "model": "cutImage",
-        "tableRef": "cutImage",
-        "id": "input7",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }],
-    "action": [{
-        "name": "submit",
-        "action": "submitUser"
-    }, {
-        "name": "cancel",
-        "action": "cancelUser",
-        "stateName": "page({jsonName:'viewMovie'})"
-    }],
-    "apiCall": {
-        "url": "movie/save",
-        "params": "_id"
-    },
-    "preApi": {
-        "url": "movie/findOne",
-        "params": "_id"
-    },
+	"title": "Edit Movie",
+	"jsonPage": "viewMovie",
+	"desciption": "",
+	"pageType": "edit",
+	"urlFields": ["_id"],
+	"fields": [{
+		"name": "Id",
+		"type": "hidden",
+		"tableRef": "_id",
+		"placeholder": "Enter First Name",
+		"id": "input1",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "_id"
+	}, {
+		"name": "Name",
+		"type": "text",
+		"tableRef": "name",
+		"placeholder": "Enter name",
+		"id": "input2",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "name"
+	}, {
+		"name": "Synopsis",
+		"type": "textarea",
+		"tableRef": "synopsis",
+		"placeholder": "Enter name",
+		"id": "input2",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "synopsis"
+	}, {
+		"name": "Director's Note",
+		"type": "textarea",
+		"tableRef": "note",
+		"model": "note",
+		"placeholder": "Enter note",
+		"id": "input2",
+		"validation": ["required", "trim", "unique"],
+		"url": ""
+	}, {
+		"name": "Release Type",
+		"type": "select",
+		"tableRef": "releaseType",
+		"model": "releaseType",
+		"id": "input3",
+		"model": "releaseType",
+		"validation": ["required", "trim", "unique"],
+		"url": [{
+			"value": "Upcoming",
+			"name": "upcoming"
+		}, {
+			"value": "Recent",
+			"name": "recent"
+		}, {
+			"value": "Past",
+			"name": "past"
+		}]
+	}, {
+		"name": "Upcoming Release Image",
+		"type": "image",
+		"tableRef": "bigImage",
+		"model": "bigImage",
+		"id": "input4",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"size": "1105 X 520px"
+	}, {
+		"name": "Past Release Image",
+		"type": "image",
+		"model": "smallImage",
+		"tableRef": "smallImage",
+		"id": "input5",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"size": "280 x 380px"
+	}, {
+		"name": "Recent Release Image",
+		"type": "image",
+		"model": "mediumImage",
+		"tableRef": "mediumImage",
+		"id": "input6",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"size": "715 x 405px"
+	}, {
+		"name": "Movie Inside Image",
+		"type": "image",
+		"model": "cutImage",
+		"tableRef": "cutImage",
+		"id": "input7",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"size": "790 x 535px"
+	}],
+	"action": [{
+		"name": "submit",
+		"action": "submitUser"
+	}, {
+		"name": "cancel",
+		"action": "cancelUser",
+		"stateName": "page({jsonName:'viewMovie'})"
+	}],
+	"apiCall": {
+		"url": "movie/save",
+		"params": "_id"
+	},
+	"preApi": {
+		"url": "movie/findOne",
+		"params": "_id"
+	},
 
-    "sidemenu": [{
-      "name":"Movie Details",
-      "action":"sidemenuRedirect",
-      "jsonPage":"editMovie",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },
-    {
-      "name":"Cast",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewCast",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findCast"
-    },{
-      "name":"Crew",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewCrew",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findCrew"
-    },{
-      "name":"Gallery",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewGallery",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findGallery"
-    },{
-      "name":"Videos",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewVideos",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findVideos"
-    },{
-      "name":"Wallpaper",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewWallpaper",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findWallpaper"
-    },{
-      "name":"Awards",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewAward",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findAwards"
-    }]
+	"sidemenu": [{
+		"name": "Movie Details",
+		"action": "sidemenuRedirect",
+		"jsonPage": "editMovie",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findOne"
+	}, {
+		"name": "Cast",
+		"action": "sidemenuRedirect",
+		"jsonPage": "viewCast",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findCast"
+	}, {
+		"name": "Crew",
+		"action": "sidemenuRedirect",
+		"jsonPage": "viewCrew",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findCrew"
+	}, {
+		"name": "Gallery",
+		"action": "sidemenuRedirect",
+		"jsonPage": "viewGallery",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findGallery"
+	}, {
+		"name": "Videos",
+		"action": "sidemenuRedirect",
+		"jsonPage": "viewVideos",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findVideos"
+	}, {
+		"name": "Wallpaper",
+		"action": "sidemenuRedirect",
+		"jsonPage": "viewWallpaper",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findWallpaper"
+	}, {
+		"name": "Awards",
+		"action": "sidemenuRedirect",
+		"jsonPage": "viewAward",
+		"fieldsToSend": [1],
+		"callFindOne": "movie/findAwards"
+	}]
 
 }

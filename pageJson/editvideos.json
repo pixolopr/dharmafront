@@ -27,7 +27,8 @@
         "model": "thumbnail",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "",
+        "size": "470 x 330px"
     },{
         "name": "Is banner",
         "type": "select",

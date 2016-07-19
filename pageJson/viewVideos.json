@@ -3,6 +3,7 @@
     "desciption": "",
     "pageType": "view",
     "sendIdWithCreate": true,
+      "urlFields": ["movie"],
       "urlFields": ["_id"],
     "fields": [{
             "name": "Thumbnail",

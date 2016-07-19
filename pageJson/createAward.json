@@ -3,6 +3,7 @@
     "jsonPage": "viewAward",
     "desciption": "",
     "pageType": "create",
+      "urlFields": ["movie"],
     "fields": [{
         "name": "Award Name",
         "type": "text",

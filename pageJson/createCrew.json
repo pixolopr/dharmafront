@@ -3,6 +3,7 @@
     "jsonPage": "viewCrew",
     "desciption": "",
     "pageType": "create",
+      "urlFields": ["movie"],
     "fields": [{
         "name": "Name",
         "type": "text",
