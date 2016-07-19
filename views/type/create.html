@@ -30,7 +30,7 @@
 
             <div ng-if="field.type=='select'">
                 <label>{{field.name}}</label>
-                <md-select ng-model="json.editData[field.model]">
+                <md-select ng-model="field.model">
                     <md-option ng-repeat="item in field.url" value="{{item.value}}">{{item.name}}</md-option>
                 </md-select>
             </div>
