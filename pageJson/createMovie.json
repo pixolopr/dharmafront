@@ -70,10 +70,19 @@
         "size": "715 x 405px",
         "url": ""
     },  {
-        "name": "Movie Inside Image",
+        "name": "Movie Inside Background Image",
         "type": "image",
         "model": "cutImage",
         "tableRef": "cutImage",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "size": "790 x 535px",
+        "url": ""
+    },  {
+        "name": "Movie Inside Background Image For Synopsis",
+        "type": "image",
+        "model": "cutImage2",
+        "tableRef": "cutImage2",
         "id": "input7",
         "validation": ["required", "trim", "unique"],
         "size": "790 x 535px",
