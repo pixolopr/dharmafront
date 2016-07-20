@@ -5,21 +5,21 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
-        "type": "text",
-        "tableRef": "name",
-        "model": "name",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Title",
         "type": "text",
         "tableRef": "title",
         "model": "title",
         "placeholder": "Enter title",
         "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "model": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }],

@@ -3,16 +3,8 @@
     "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
-      "urlFields": ["movie"],
+    "urlFields": ["movie"],
     "fields": [{
-        "name": "Name",
-        "type": "text",
-        "tableRef": "name",
-        "placeholder": "Enter name",
-        "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Title",
         "type": "text",
         "tableRef": "title",
@@ -20,14 +12,22 @@
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    }, {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
         "action": "submitUser"
     }, {
-      "name": "cancel",
-      "sideMenuRedirect":true,
-      "stateName": "page({jsonName:'viewMovie'})"
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": "page({jsonName:'viewMovie'})"
     }],
 
     "apiCall": {
