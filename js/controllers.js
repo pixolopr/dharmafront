@@ -40,6 +40,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
+    // for sidemenu redirect
+
+
+    $scope.back = function() {
+       window.history.back();
+    };
+
+
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -343,16 +351,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         // CALL GENERAL API
         NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
-            if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
-                $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
-
-            } else if ($scope.json.action[0].submitUrl && $scope.urlid2) {
-                $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid2);
-            } else {
-                $state.go("page", {
-                    jsonName: $scope.json.jsonPage
-                });
-            }
+             window.history.back();
+            // if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
+            //     $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
+            //
+            // } else if ($scope.json.action[0].submitUrl && $scope.urlid2) {
+            //     $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid2);
+            // } else {
+            //     $state.go("page", {
+            //         jsonName: $scope.json.jsonPage
+            //     });
+            // }
 
         }, function() {
             // showToast("Error saving the Project");

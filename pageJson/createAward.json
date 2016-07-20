@@ -49,8 +49,9 @@
         "name": "submit",
         "action": "submitUser"
     }, {
-        "name": "cancel",
-        "stateName": "page({jsonName:'viewAward'})"
+      "name": "cancel",
+      "sideMenuRedirect":true,
+      "stateName": "page({jsonName:'viewMovie'})"
     }],
 
     "apiCall": {

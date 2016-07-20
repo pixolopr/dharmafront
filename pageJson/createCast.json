@@ -34,6 +34,7 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
+        "sideMenuRedirect":true,
         "stateName": "page({jsonName:'viewMovie'})"
     }],
 
