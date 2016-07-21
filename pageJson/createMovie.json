@@ -44,7 +44,7 @@
             "name": "past"
         }]
     }, {
-        "name": "Background Image",
+        "name": "Movie Inside Main Background Image",
         "type": "image",
         "tableRef": "backgroundImage",
         "id": "input4",
