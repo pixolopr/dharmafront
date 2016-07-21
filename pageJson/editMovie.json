@@ -58,8 +58,17 @@
 			"value": "Past",
 			"name": "past"
 		}]
+	},{
+			"name": "Background Image",
+			"type": "image",
+			"tableRef": "backgroundImage",
+			"model": "backgroundImage",
+			"id": "input4",
+			"validation": ["required", "trim", "unique"],
+			"url": "",
+			"size": "1920 x 2823px"
 	}, {
-		"name": "Upcoming Release Image",
+		"name": "Upcoming Release Image (Big)",
 		"type": "image",
 		"tableRef": "bigImage",
 		"model": "bigImage",
@@ -67,6 +76,15 @@
 		"validation": ["required", "trim", "unique"],
 		"url": "",
 		"size": "1105 X 520px"
+	},{
+			"name": "Upcoming Release Image (Small)",
+			"type": "image",
+			"tableRef": "upcomingSmall",
+			"model": "upcomingSmall",
+			"id": "input4",
+			"validation": ["required", "trim", "unique"],
+			"url": "",
+			"size": "280 X 380px"
 	}, {
 		"name": "Past Release Image",
 		"type": "image",
@@ -85,6 +103,15 @@
 		"validation": ["required", "trim", "unique"],
 		"url": "",
 		"size": "715 x 405px"
+	},{
+			"name": "Recent Release Image (Small)",
+			"type": "image",
+			"model": "recentSmall",
+			"tableRef": "recentSmall",
+			"id": "input6",
+			"validation": ["required", "trim", "unique"],
+			"size": "280 X 380px",
+			"url": ""
 	}, {
 		"name": "Movie Inside Background Image",
 		"type": "image",

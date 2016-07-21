@@ -44,13 +44,29 @@
             "name": "past"
         }]
     }, {
-        "name": "Upcoming Release Image",
+        "name": "Background Image",
+        "type": "image",
+        "tableRef": "backgroundImage",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "1920 x 2823px"
+    },{
+        "name": "Upcoming Release Image (Big)",
         "type": "image",
         "tableRef": "bigImage",
         "id": "input4",
         "validation": ["required", "trim", "unique"],
         "url": "",
         "size": "1105 X 520px"
+    }, {
+        "name": "Upcoming Release Image (Small)",
+        "type": "image",
+        "tableRef": "upcomingSmall",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "280 X 380px"
     }, {
         "name": "Past Release Image",
         "type": "image",
@@ -61,13 +77,22 @@
         "size": "280 x 380px",
         "url": ""
     }, {
-        "name": "Recent Release Image",
+        "name": "Recent Release Image (Big)",
         "type": "image",
         "model": "mediumImage",
         "tableRef": "mediumImage",
         "id": "input6",
         "validation": ["required", "trim", "unique"],
         "size": "715 x 405px",
+        "url": ""
+    },{
+        "name": "Recent Release Image (Small)",
+        "type": "image",
+        "model": "recentSmall",
+        "tableRef": "recentSmall",
+        "id": "input6",
+        "validation": ["required", "trim", "unique"],
+        "size": "280 X 380px",
         "url": ""
     }, {
         "name": "Movie Inside Background Image",
