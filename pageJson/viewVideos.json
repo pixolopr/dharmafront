@@ -3,9 +3,13 @@
     "desciption": "",
     "pageType": "view",
     "sendIdWithCreate": true,
-      "urlFields": ["movie"],
-      "urlFields": ["_id"],
+    "urlFields": ["movie"],
+    "urlFields": ["_id"],
     "fields": [{
+            "name": "Name",
+            "isSort": "",
+            "tableRef": "name"
+        }, {
             "name": "Thumbnail",
             "isSort": "",
             "tableRef": "thumbnail",
@@ -68,47 +72,52 @@
     },
     "createButtonState": "page({jsonName:'createVideos'})",
     "sidemenu": [{
-      "name":"Movie Details",
-      "action":"sidemenuRedirect",
-      "jsonPage":"editMovie",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findOne"
-    },
-    {
-      "name":"Cast",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewCast",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findCast"
-    },{
-      "name":"Crew",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewCrew",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findCrew"
-    },{
-      "name":"Gallery",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewGallery",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findGallery"
-    },{
-      "name":"Videos",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewVideos",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findVideos"
-    },{
-      "name":"Wallpaper",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewWallpaper",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findWallpaper"
-    },{
-      "name":"Awards",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewAward",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findAwards"
+        "name": "Movie Details",
+        "action": "sidemenuRedirect",
+        "jsonPage": "editMovie",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findOne"
+    }, {
+        "name": "Cast",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewCast",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findCast"
+    }, {
+        "name": "Crew",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewCrew",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findCrew"
+    }, {
+        "name": "Gallery",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewGallery",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findGallery"
+    }, {
+        "name": "Videos",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewVideos",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findVideos"
+    }, {
+        "name": "Wallpaper",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewWallpaper",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findWallpaper"
+    }, {
+        "name": "Awards",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewAward",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findAwards"
+    }, {
+        "name": "Behind The Scenes",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewBehind",
+        "fieldsToSend": [1],
+        "callFindOne": "movie/findBehindTheScenes"
     }]
 }

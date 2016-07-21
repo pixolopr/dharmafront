@@ -1,5 +1,5 @@
 {
-    "title": "All Wallpaper",
+    "title": "All Behind the Scenes",
     "desciption": "",
     "pageType": "view",
     "sendIdWithCreate": true,
@@ -21,17 +21,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editWallpaper",
+        "jsonPage": "editBehind",
         "fieldsToSend": ["_id"],
-        "callFindOne": "movie/findOneWallpaper"
+        "callFindOne": "movie/findOneBehindtheScenes"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Wallpaper",
-        "content": "Are you sure you want to delete wallpaper?",
-        "api": "movie/deleteWallpaper",
+        "title": "Delete BehindtheScenes",
+        "content": "Are you sure you want to delete gallery?",
+        "api": "movie/deleteBehindtheScenes",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -58,10 +58,10 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "movie/findWallpaper",
+        "url": "movie/findBehindtheScenes",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createWallpaper'})",
+    "createButtonState": "page({jsonName:'createBehind'})",
     "sidemenu": [{
       "name":"Movie Details",
       "action":"sidemenuRedirect",

@@ -104,5 +104,11 @@
       "jsonPage":"viewAward",
       "fieldsToSend":[1],
       "callFindOne":"movie/findAwards"
+    },{
+      "name":"Behind The Scenes",
+      "action":"sidemenuRedirect",
+      "jsonPage":"viewBehind",
+      "fieldsToSend":[1],
+      "callFindOne":"movie/findBehindTheScenes"
     }]
 }
