@@ -51,7 +51,7 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "size": "1920 x 2823px"
-    },{
+    }, {
         "name": "Upcoming Release Image (Big)",
         "type": "image",
         "tableRef": "bigImage",
@@ -85,7 +85,7 @@
         "validation": ["required", "trim", "unique"],
         "size": "715 x 405px",
         "url": ""
-    },{
+    }, {
         "name": "Recent Release Image (Small)",
         "type": "image",
         "model": "recentSmall",
@@ -113,6 +113,13 @@
         "size": "790 x 535px",
         "url": ""
     }, {
+        "name": "Theatrical Trailer Url",
+        "type": "text",
+        "tableRef": "theatricalTrailerUrl",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
         "name": "Theatrical Trailer Image",
         "type": "image",
         "tableRef": "theatricalTrailerImage",
@@ -120,13 +127,6 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "size": "1644 x 636px"
-    }, {
-        "name": "Theatrical Trailer Url",
-        "type": "text",
-        "tableRef": "theatricalTrailerUrl",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
     }],
     "action": [{
         "name": "submit",
