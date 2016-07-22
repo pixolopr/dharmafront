@@ -41,10 +41,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
     // for sidemenu redirect
-
+    $scope.tinymceOptions = {
+        onChange: function(e) {
+            // put logic here for keypress and cut/paste changes
+        },
+        inline: false,
+        plugins: 'advlist autolink link image lists charmap print preview',
+        skin: 'lightgray',
+        theme: 'modern'
+    };
 
     $scope.back = function() {
-       window.history.back();
+        window.history.back();
     };
 
 
@@ -351,7 +359,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         // CALL GENERAL API
         NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
-             window.history.back();
+            window.history.back();
             // if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
             //     $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
             //

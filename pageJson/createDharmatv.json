@@ -12,7 +12,15 @@
         "validation": ["required", "trim", "unique"],
         "url": "movie/find"
     }, {
-        "name": "Url",
+        "name": "Title",
+        "type": "text",
+        "tableRef": "title",
+        "placeholder": "Enter title",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Youtube link",
         "type": "text",
         "tableRef": "url",
         "placeholder": "Enter url",

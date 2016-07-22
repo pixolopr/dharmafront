@@ -23,7 +23,7 @@
         "url": "",
         "model": "name"
     }, {
-        "name": "Synopsis",
+        "name": "Synopsis Text Box",
         "type": "textarea",
         "tableRef": "synopsis",
         "placeholder": "Enter name",
@@ -32,12 +32,28 @@
         "url": "",
         "model": "synopsis"
     }, {
-        "name": "Director's Note",
+        "name": "Year",
+        "type": "text",
+        "tableRef": "year",
+        "placeholder": "Enter year",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Directors Note Text Box",
         "type": "textarea",
         "tableRef": "note",
         "model": "note",
         "placeholder": "Enter note",
         "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Year",
+        "type": "text",
+        "tableRef": "year",
+        "placeholder": "Enter year",
+        "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
@@ -131,7 +147,7 @@
         "size": "790 x 535px",
         "url": ""
     }, {
-        "name": "Theatrical Trailer Url",
+        "name": "Youtube Link Provision",
         "type": "text",
         "tableRef": "theatricalTrailerUrl",
         "model": "theatricalTrailerUrl",
@@ -139,7 +155,7 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Theatrical Trailer Image",
+        "name": "Thumbnail",
         "type": "image",
         "tableRef": "theatricalTrailerImage",
         "model": "theatricalTrailerImage",

@@ -7,10 +7,6 @@
             "isSort": "",
             "tableRef": "title"
         }, {
-            "name": "Link",
-            "isSort": "",
-            "tableRef": "link"
-        }, {
             "name": "Movie",
             "isSort": "",
             "tableRef": "movie.name"

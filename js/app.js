@@ -206,6 +206,26 @@ firstapp.directive('img', function($compile, $parse) {
     };
 });
 
+firstapp.directive('myEditor', function () {
+    var uniqueId = 0;
+    return {
+        restrict: 'E',
+        require: 'ngModel',
+        scope: true,
+        template: '<textarea></textarea>',
+        link: function (scope, element, attrs, ngModel) {
+            var id = 'myEditor_' + uniqueId++;
+            element.find('textarea').attr('id', id);
+            tinymce.init({
+                selector: '#' + id
+            });
+
+            var editor = tinymce.get(id);
+            alert(editor); // why is this undefined?
+        }
+    };
+});
+
 var editorG = {};
 var jsonEditorNo = 0;
 firstapp.directive('jsoneditor', function($compile, $parse) {

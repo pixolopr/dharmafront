@@ -50,6 +50,10 @@
                 <label>{{field.name}}</label>
                 <textarea style="height:100px;" ng-model="field.model" name="{{field.name}}" id="{{field.id}}"></textarea>
             </div>
+            <div ng-if="field.type=='tinymce'">
+                <label>{{field.name}}</label>
+               <textarea ui-tinymce="tinymceOptions" ng-model="field.model"></textarea>
+            </div>
             <div ng-if="field.type=='date'">
                 <label>Date</label>
                 <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
@@ -60,7 +64,7 @@
             <div ng-if="field.type=='image'">
                 <label for="">{{field.name}}</label>
                 <!-- <img ng-src="{{field.image|uploadpath}}"> -->
-                  <span style="float: right;">{{field.size}}</span>
+                <span style="float: right;">{{field.size}}</span>
                 <upload-image ng-model="field.model" no-view></upload-image>
                 <div class="img-holder-big">
                     <img ng-src="{{field.model | uploadpath:250:250:'fill'}}" ng-if="field.model" />

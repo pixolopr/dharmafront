@@ -41,6 +41,10 @@
                 <label>{{field.name}}</label>
                 <textarea style="height:100px;" ng-model="json.editData[field.model]" name="{{field.name}}" id="{{field.id}}"></textarea>
             </div>
+            <div ng-if="field.type=='tinymce'">
+                <label>{{field.name}}</label>
+                <my-editor ng-model="field.model"></my-editor>
+            </div>
             <div ng-if="field.type=='selectFromTable'">
 
                 <label for="{{field.id}}">{{field.name}}</label>

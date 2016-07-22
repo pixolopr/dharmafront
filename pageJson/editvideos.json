@@ -5,7 +5,7 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
+        "name": "Title Text",
         "type": "text",
         "model": "name",
         "tableRef": "name",
@@ -13,7 +13,7 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
-        "name": "Url",
+        "name": "Youtube Link",
         "type": "text",
         "tableRef": "url",
         "model": "url",

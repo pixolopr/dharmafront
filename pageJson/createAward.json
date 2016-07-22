@@ -37,7 +37,7 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Note",
+        "name": "Sub-Note",
         "type": "text",
         "tableRef": "note",
         "placeholder": "Enter note",
