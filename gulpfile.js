@@ -1,6 +1,7 @@
 var jsArray = [
   "./bower_components/jquery/dist/jquery.js",
   "./bower_components/tinymce-dist/tinymce.js",
+  "./bower_components/tinymce-dist/themes/modern/theme.min.js",
   "./bower_components/angular/angular.js",
   "./bower_components/angular-ui-tinymce/src/tinymce.js",
   "./bower_components/angular-sanitize/angular-sanitize.min.js",
