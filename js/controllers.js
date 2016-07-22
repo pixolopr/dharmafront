@@ -1,7 +1,7 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap','ui.tinymce'])
 
 .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.menutitle = NavigationService.makeactive("Login");
@@ -41,15 +41,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
     // for sidemenu redirect
-    $scope.tinymceOptions = {
-        onChange: function(e) {
-            // put logic here for keypress and cut/paste changes
-        },
-        inline: false,
-        plugins: 'advlist autolink link image lists charmap print preview',
-        skin: 'lightgray',
-        theme: 'modern'
-    };
+    // $scope.tinymceOptions = {
+    //     onChange: function(e) {
+    //         // put logic here for keypress and cut/paste changes
+    //     },
+    //     inline: false,
+    //     plugins: 'advlist autolink link image lists charmap print preview',
+    //     skin: 'lightgray',
+    //     theme: 'modern'
+    // };
 
     $scope.back = function() {
         window.history.back();

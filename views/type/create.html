@@ -52,7 +52,7 @@
             </div>
             <div ng-if="field.type=='tinymce'">
                 <label>{{field.name}}</label>
-               <textarea ui-tinymce="tinymceOptions" ng-model="field.model"></textarea>
+                <textarea ui-tinymce ng-model="field.model"></textarea>
             </div>
             <div ng-if="field.type=='date'">
                 <label>Date</label>

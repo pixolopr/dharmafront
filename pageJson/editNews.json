@@ -34,7 +34,7 @@
         "size": "405 x 302px"
     }, {
         "name": "Description",
-        "type": "text",
+        "type": "tinymce",
         "tableRef": "text",
         "model": "text",
         "placeholder": "Enter text",
