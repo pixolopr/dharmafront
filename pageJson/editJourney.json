@@ -4,7 +4,7 @@
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
-    "fields": [ {
+    "fields": [{
         "name": "Title",
         "type": "text",
         "tableRef": "title",
@@ -31,7 +31,7 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "size": "405 x 302px"
+        "size": "373 x 394px"
     }, {
         "name": "Date",
         "type": "date",
