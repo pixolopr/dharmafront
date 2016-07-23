@@ -35,6 +35,7 @@
         "name": "Year",
         "type": "text",
         "tableRef": "year",
+        "model": "year",
         "placeholder": "Enter year",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
