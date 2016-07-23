@@ -28,6 +28,21 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     link: "#/page/viewJourney",
     subnav: []
+  }, {
+    name: "Dharma Home",
+    classis: "active",
+    link: "#/page/viewDharmaHome",
+    subnav: []
+  }, {
+    name: "Dharma Slider",
+    classis: "active",
+    link: "#/page/viewDharmaSlider",
+    subnav: []
+  }, {
+    name: "Home Slider",
+    classis: "active",
+    link: "#/page/viewHomeSlider",
+    subnav: []
   }
 ];
 
