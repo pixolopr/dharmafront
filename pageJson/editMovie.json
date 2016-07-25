@@ -14,7 +14,7 @@
         "url": "",
         "model": "_id"
     }, {
-        "name": "Name",
+        "name": "Name of the movie",
         "type": "text",
         "tableRef": "name",
         "placeholder": "Enter name",
@@ -22,15 +22,6 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "name"
-    }, {
-        "name": "Synopsis Text Box",
-        "type": "textarea",
-        "tableRef": "synopsis",
-        "placeholder": "Enter name",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "synopsis"
     }, {
         "name": "Year",
         "type": "text",
@@ -40,6 +31,15 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    }, {
+        "name": "Synopsis Text Box",
+        "type": "textarea",
+        "tableRef": "synopsis",
+        "placeholder": "Enter name",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "synopsis"
     }, {
         "name": "Directors Note Text Box",
         "type": "textarea",
@@ -95,15 +95,6 @@
         "url": "",
         "size": "280 X 380px"
     }, {
-        "name": "Past Release Image",
-        "type": "image",
-        "model": "smallImage",
-        "tableRef": "smallImage",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "size": "280 x 380px"
-    }, {
         "name": "Recent Release Image (Big)",
         "type": "image",
         "model": "mediumImage",
@@ -121,6 +112,15 @@
         "validation": ["required", "trim", "unique"],
         "size": "280 X 380px",
         "url": ""
+    }, {
+        "name": "Past Release Image",
+        "type": "image",
+        "model": "smallImage",
+        "tableRef": "smallImage",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "280 x 380px"
     }, {
         "name": "Movie Inside Background Image",
         "type": "image",

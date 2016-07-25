@@ -5,15 +5,15 @@
       "urlFields": ["movie"],
     "pageType": "create",
     "fields": [{
-        "name": "Name",
+        "name": "Actor",
         "type": "text",
-        "tableRef": "name",
-        "placeholder": "Enter name",
-        "id": "input1",
+        "tableRef": "actor",
+        "placeholder": "Enter actor",
+        "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Type",
+    },{
+        "name": "Type (Cast | Sub-Cast)",
         "type": "select",
         "tableRef": "type",
         "id": "input4",
@@ -26,11 +26,11 @@
                 "name": "Sub-cast"
             }]
     },{
-        "name": "Actor",
+        "name": "Character Name",
         "type": "text",
-        "tableRef": "actor",
-        "placeholder": "Enter actor",
-        "id": "input2",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {

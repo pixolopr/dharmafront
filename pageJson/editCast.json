@@ -5,16 +5,16 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
+        "name": "Actor",
         "type": "text",
-        "tableRef": "name",
-        "model": "name",
-        "placeholder": "Enter name",
-        "id": "input1",
+        "tableRef": "actor",
+        "model": "actor",
+        "placeholder": "Enter actor",
+        "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Type",
+    },{
+        "name": "Type (Cast | Sub-Cast)",
         "type": "select",
         "tableRef": "type",
         "model": "type",
@@ -28,12 +28,12 @@
                 "name": "Sub-cast"
             }]
     },{
-        "name": "Actor",
+        "name": "Character Name",
         "type": "text",
-        "tableRef": "actor",
-        "model": "actor",
-        "placeholder": "Enter actor",
-        "id": "input2",
+        "tableRef": "name",
+        "model": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {

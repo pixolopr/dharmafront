@@ -16,6 +16,10 @@
             "isSort": "",
             "tableRef": "smallImage",
             "type":"image"
+        }, {
+            "name": "Year",
+            "isSort": "",
+            "tableRef": "year"
         }
 
     ],

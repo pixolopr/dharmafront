@@ -4,10 +4,18 @@
     "desciption": "",
     "pageType": "create",
     "fields": [{
-        "name": "Name",
+        "name": "Name of the movie",
         "type": "text",
         "tableRef": "name",
         "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Year",
+        "type": "text",
+        "tableRef": "year",
+        "placeholder": "Enter year",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
@@ -25,14 +33,6 @@
         "tableRef": "note",
         "placeholder": "Enter note",
         "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },{
-        "name": "Year",
-        "type": "text",
-        "tableRef": "year",
-        "placeholder": "Enter year",
-        "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
@@ -76,15 +76,6 @@
         "url": "",
         "size": "280 X 380px"
     }, {
-        "name": "Past Release Image",
-        "type": "image",
-        "model": "smallImage",
-        "tableRef": "smallImage",
-        "id": "input5",
-        "validation": ["required", "trim", "unique"],
-        "size": "280 x 380px",
-        "url": ""
-    }, {
         "name": "Recent Release Image (Big)",
         "type": "image",
         "model": "mediumImage",
@@ -101,6 +92,15 @@
         "id": "input6",
         "validation": ["required", "trim", "unique"],
         "size": "280 X 380px",
+        "url": ""
+    }, {
+        "name": "Past Release Image",
+        "type": "image",
+        "model": "smallImage",
+        "tableRef": "smallImage",
+        "id": "input5",
+        "validation": ["required", "trim", "unique"],
+        "size": "280 x 380px",
         "url": ""
     }, {
         "name": "Movie Inside Background Image",
