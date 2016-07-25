@@ -97,17 +97,11 @@
         "jsonPage": "viewWallpaper",
         "fieldsToSend": [1],
         "callFindOne": "movie/findWallpaper"
-    }, {
-        "name": "Awards",
+    },  {
+        "name": "Behind The Scenes",
         "action": "sidemenuRedirect",
-        "jsonPage": "viewAward",
+        "jsonPage": "viewBehind",
         "fieldsToSend": [1],
-        "callFindOne": "movie/findAwards"
-    },{
-      "name":"Behind The Scenes",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewBehind",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findBehindTheScenes"
+        "callFindOne": "movie/findBehindTheScenes"
     }]
 }

@@ -19,6 +19,11 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/page/viewNews",
     subnav: []
   }, {
+    name: "Awards",
+    classis: "active",
+    link: "#/page/viewNewAward",
+    subnav: []
+  }, {
     name: "Dharma tv",
     classis: "active",
     link: "#/page/viewDharmatv",
@@ -29,12 +34,12 @@ var navigationservice = angular.module('navigationservice', [])
     link: "#/page/viewJourney",
     subnav: []
   }, {
-    name: "Dharma Home",
+    name: "Dharma tv Home",
     classis: "active",
     link: "#/page/viewDharmaHome",
     subnav: []
   }, {
-    name: "Dharma Slider",
+    name: "Dharma tv Slider",
     classis: "active",
     link: "#/page/viewDharmaSlider",
     subnav: []

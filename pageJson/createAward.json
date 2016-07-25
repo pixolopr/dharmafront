@@ -3,21 +3,13 @@
     "jsonPage": "viewMovie",
     "desciption": "",
     "pageType": "create",
-      "urlFields": ["movie"],
+      "urlFields": ["newaward"],
     "fields": [{
-        "name": "Award Name",
+        "name": "Title",
         "type": "text",
         "tableRef": "awardname",
         "placeholder": "Enter name",
         "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Title",
-        "type": "text",
-        "tableRef": "title",
-        "placeholder": "Enter title",
-        "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
@@ -28,15 +20,7 @@
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Year",
-        "type": "text",
-        "tableRef": "year",
-        "placeholder": "Enter year",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
+    },  {
         "name": "Sub-Note",
         "type": "text",
         "tableRef": "note",
@@ -55,6 +39,6 @@
     }],
 
     "apiCall": {
-        "url": "movie/saveAwards"
+        "url": "newaward/saveAward"
     }
 }

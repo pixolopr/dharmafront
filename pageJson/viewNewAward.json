@@ -1,17 +1,19 @@
 {
-    "title": "All Award",
+    "title": "All News",
     "desciption": "",
     "pageType": "view",
-    "sendIdWithCreate": true,
-      "urlFields": ["_id"],
     "fields": [{
-            "name": "Title",
+            "name": "Award Name",
             "isSort": "",
-            "tableRef": "awardname"
+            "tableRef": "name"
         }, {
-            "name": "Winner",
+            "name": "Movie",
             "isSort": "",
-            "tableRef": "winner"
+            "tableRef": "movie.name"
+        }, {
+            "name": "Year",
+            "isSort": "",
+            "tableRef": "year"
         }
 
     ],
@@ -20,17 +22,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editAward",
+        "jsonPage": "editNewAward",
         "fieldsToSend": ["_id"],
-        "callFindOne": "newaward/findOneAward"
+        "callFindOne": "newaward/findOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete Award",
-        "content": "Are you sure you want to delete award?",
-        "api": "newaward/deleteAward",
+        "title": "Delete ",
+        "content": "Are you sure you want to delete crew?",
+        "api": "newaward/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -57,22 +59,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "newaward/findAward",
+        "url": "newaward/findLimited",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createAward'})",
-    "sidemenu": [{
-      "name":"Award Details",
-      "action":"sidemenuRedirect",
-      "jsonPage":"editNewAward",
-      "fieldsToSend":[1],
-      "callFindOne":"newaward/findOne"
-    },
-    {
-      "name":"Awards",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewAward",
-      "fieldsToSend":[1],
-      "callFindOne":"newaward/findAward"
-    }]
+    "createButtonState": "page({jsonName:'createNewAward'})"
 }

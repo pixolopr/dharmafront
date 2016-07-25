@@ -100,12 +100,6 @@
       "fieldsToSend":[1],
       "callFindOne":"movie/findWallpaper"
     },{
-      "name":"Awards",
-      "action":"sidemenuRedirect",
-      "jsonPage":"viewAward",
-      "fieldsToSend":[1],
-      "callFindOne":"movie/findAwards"
-    },{
       "name":"Behind The Scenes",
       "action":"sidemenuRedirect",
       "jsonPage":"viewBehind",

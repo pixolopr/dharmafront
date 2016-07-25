@@ -5,7 +5,7 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Award Name",
+        "name": "Title",
         "type": "text",
         "tableRef": "awardname",
         "model": "awardname",
@@ -14,33 +14,15 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Title",
-        "type": "text",
-        "tableRef": "title",
-        "model": "title",
-        "placeholder": "Enter title",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
         "name": "Winner",
         "type": "text",
-        "tableRef": "winner",
         "model": "winner",
+        "tableRef": "winner",
         "placeholder": "Enter winner",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Year",
-        "type": "text",
-        "tableRef": "year",
-        "model": "year",
-        "placeholder": "Enter year",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
+    },  {
         "name": "Sub-Note",
         "type": "text",
         "tableRef": "note",
@@ -59,11 +41,11 @@
       "stateName": "page({jsonName:'viewMovie'})"
     }],
     "apiCall": {
-        "url": "movie/saveAwards",
+        "url": "newaward/saveAward",
         "params": "_id"
     },
     "preApi": {
-        "url": "movie/findOneAwards",
+        "url": "newaward/findOneAward",
         "params": "_id"
     }
 
