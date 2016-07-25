@@ -1,7 +1,7 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
 
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap','ui.tinymce'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap', 'ui.tinymce'])
 
 .controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.menutitle = NavigationService.makeactive("Login");
@@ -65,6 +65,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var jsonName = jsonArr[0];
     var urlParams = {};
     $scope.dropdown = {};
+    $scope.img = '';
+    $scope.emptyimg = '';
     $scope.abc = {};
     $scope.abc.tag = [];
     $scope.dropdownvalues = [];
@@ -83,7 +85,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var urlid1 = $location.absUrl().split('%C2%A2')[1];
     var urlid2 = $location.absUrl().split('%C2%A2')[2];
 
-
+    $scope.removeImage = function(page, image) {
+        $scope.img = image;
+        console.log($scope.img);
+        console.log(page);
+        $scope.emptyimg="$scope.json.editData."+ $scope.img;
+        console.log($scope.emptyimg);
+        $scope.emptyimg='';
+    };
 
     $scope.confirm = function(title, content, api, data) {
         var confirm = $mdDialog.confirm()
