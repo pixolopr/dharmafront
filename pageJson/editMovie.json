@@ -5,6 +5,15 @@
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "model": "order",
+        "placeholder": "Enter order",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
         "name": "Id",
         "type": "hidden",
         "tableRef": "_id",

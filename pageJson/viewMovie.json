@@ -3,6 +3,10 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
+            "name": "Order",
+            "isSort": "",
+            "tableRef": "order"
+        },{
             "name": "Name",
             "isSort": "",
             "tableRef": "name"

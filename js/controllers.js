@@ -40,22 +40,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('jsonViewCtrl', function($scope, $location, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
-    // for sidemenu redirect
-    // $scope.tinymceOptions = {
-    //     onChange: function(e) {
-    //         // put logic here for keypress and cut/paste changes
-    //     },
-    //     inline: false,
-    //     plugins: 'advlist autolink link image lists charmap print preview',
-    //     skin: 'lightgray',
-    //     theme: 'modern'
-    // };
-
     $scope.back = function() {
         window.history.back();
     };
-
-
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -140,10 +127,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             _.each($scope.json.fields, function(n) {
                 if (n.type == "select") {
                     n.model = "";
-                    // n.url.unshift({
-                    //     "value": "",
-                    //     "name": "SELECT"
-                    // });
                     if (n.name == "Status") {
                         n.model = true;
                     }
