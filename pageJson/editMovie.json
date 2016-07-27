@@ -157,7 +157,7 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Thumbnail",
+        "name": "Theatrical trailer",
         "type": "image",
         "tableRef": "theatricalTrailerImage",
         "model": "theatricalTrailerImage",

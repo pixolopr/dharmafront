@@ -11,12 +11,17 @@
             "isSort": "",
             "tableRef": "name"
         }, {
-            "name": "Banner",
+            "name": "Upcoming Release",
             "isSort": "",
-            "tableRef": "bigImage",
+            "tableRef": "upcomingSmall",
             "type":"image"
         }, {
-            "name": "Image",
+            "name": "Recent Release",
+            "isSort": "",
+            "tableRef": "recentSmall",
+            "type":"image"
+        }, {
+            "name": "Past Release",
             "isSort": "",
             "tableRef": "smallImage",
             "type":"image"
