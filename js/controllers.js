@@ -72,13 +72,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     var urlid1 = $location.absUrl().split('%C2%A2')[1];
     var urlid2 = $location.absUrl().split('%C2%A2')[2];
 
-    $scope.removeImage = function(page, image) {
-        $scope.img = image;
-        console.log($scope.img);
-        console.log(page);
-        $scope.emptyimg="$scope.json.editData."+ $scope.img;
-        console.log($scope.emptyimg);
-        $scope.emptyimg='';
+    $scope.removeImage = function(page, image,field) {
+      field.model = "";
+        $scope.json.editData[image] = "";
     };
 
     $scope.confirm = function(title, content, api, data) {
