@@ -48,6 +48,11 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     link: "#/page/viewHomeSlider",
     subnav: []
+  }, {
+    name: "Popular Tags",
+    classis: "active",
+    link: "#/page/viewTag",
+    subnav: []
   }
 ];
 

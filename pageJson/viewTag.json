@@ -1,28 +1,15 @@
 {
-    "title": "All Dharmatv",
+    "title": "All Popular Tag",
     "desciption": "",
     "pageType": "view",
-    "fields": [{
-            "name": "Movie",
-            "isSort": "",
-            "tableRef": "movie.name"
-        }, {
-            "name": "Title",
-            "isSort": "",
-            "tableRef": "title"
-        },{
-            "name": "Url",
-            "isSort": "",
-            "tableRef": "url"
-        },{
-            "name": "Thumbnail",
-            "isSort": "",
-            "tableRef": "thumbnail",
-            "type":"image"
-        }, {
+    "fields": [ {
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
+        }, {
+            "name": "Tag Name",
+            "isSort": "",
+            "tableRef": "name"
         }
 
     ],
@@ -31,17 +18,17 @@
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editDharmatv",
+        "jsonPage": "editTag",
         "fieldsToSend": ["_id"],
-        "callFindOne": "dharmatv/findOne"
+        "callFindOne": "tag/findOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
         "title": "Delete ",
-        "content": "Are you sure you want to delete dharmatv?",
-        "api": "dharmatv/delete",
+        "content": "Are you sure you want to delete tag?",
+        "api": "tag/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -68,8 +55,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "dharmatv/findLimited",
+        "url": "tag/findLimited",
         "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createDharmatv'})"
+    "createButtonState": "page({jsonName:'createTag'})"
 }
