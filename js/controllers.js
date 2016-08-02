@@ -222,7 +222,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.pagination = {
                 "search": "",
                 "pagenumber": pageno,
-                "pagesize": 2
+                "pagesize": 10
             };
             console.log($scope.pagination);
             // SIDE MENU DATA
