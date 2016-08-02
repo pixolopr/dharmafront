@@ -35,9 +35,9 @@
             </md-button>
         </md-list-item>
 <div class="" ng-if="pageInfo.totalitems"></div>
-{{pageInfo}}
-{{pagination}}
-        <uib-pagination total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize" ></uib-pagination>
+
+
+        <uib-pagination ng-show="json.tableData.length>=0" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize" ></uib-pagination>
 
     </md-list>
 
