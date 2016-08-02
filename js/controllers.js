@@ -217,7 +217,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log($stateParams.no);
             if($stateParams.no)
             {
-                pageno = $stateParams.no;
+                pageno = parseInt($stateParams.no);
             }
             $scope.pagination = {
                 "search": "",
@@ -263,7 +263,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
-            $scope.pageInfo = {};
+            $scope.pageInfo = {totalitems:100};
             $scope.getMoreResults = function(value) {
                 if(value)
                 {
