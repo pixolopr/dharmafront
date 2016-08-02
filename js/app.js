@@ -48,6 +48,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         url: "/page/:jsonName",
         templateUrl: "views/template.html",
         controller: 'jsonViewCtrl'
+    })
+    .state('pageno', {
+        url: "/page/:jsonName/:no",
+        templateUrl: "views/template.html",
+        controller: 'jsonViewCtrl'
     });
 
     $urlRouterProvider.otherwise("/login");
@@ -80,7 +85,7 @@ firstapp.filter('getValue', function($filter) {
             _.each(keyArr, function(n) {
                 returnValue = returnValue[n];
             });
-            console.log(type);
+    
             if (type == "date") {
                 console.log('in date');
                 // return new Date(returnValue);

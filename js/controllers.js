@@ -43,6 +43,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.back = function() {
         window.history.back();
     };
+    $scope.totalItems = 64;
+ $scope.currentPage = 4;
+
+ $scope.setPage = function (pageNo) {
+   $scope.currentPage = pageNo;
+ };
+
+ $scope.pageChanged = function() {
+   $log.log('Page changed to: ' + $scope.currentPage);
+ };
+
+ $scope.maxSize = 5;
+ $scope.bigTotalItems = 175;
+ $scope.bigCurrentPage = 1;
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -198,12 +212,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         } else if (data.pageType == "view") {
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
+
+            var pageno = 1;
+            console.log($stateParams.no);
+            if($stateParams.no)
+            {
+                pageno = $stateParams.no;
+            }
             $scope.pagination = {
                 "search": "",
-                "pagenumber": 1,
-                "pagesize": 10
+                "pagenumber": pageno,
+                "pagesize": 2
             };
-
+            console.log($scope.pagination);
             // SIDE MENU DATA
 
             $scope.pagination1 = {};
@@ -243,24 +264,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
             $scope.pageInfo = {};
-            $scope.getMoreResults = function() {
-                NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
-                    console.log(findData);
-                    if (findData.value !== false) {
-                        if (findData.data && findData.data.data && findData.data.data.length > 0) {
-                            $scope.pageInfo.lastpage = findData.data.totalpages;
-                            $scope.pageInfo.pagenumber = findData.data.pagenumber;
-                            $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
-                            $scope.json.tableData = findData.data.data;
-                        } else {
-                            $scope.json.tableData = [];
-                        }
-                    } else {
-                        $scope.json.tableData = [];
-                    }
-                }, function() {
-                    console.log("Fail");
-                });
+            $scope.getMoreResults = function(value) {
+                if(value)
+                {
+                  console.log($scope.pagination);
+                  $state.go("pageno",{no:$scope.pagination.pagenumber,jsonName:$stateParams.jsonName});
+                }
+                else {
+                  console.log($scope.pagination);
+                  NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
+                      console.log(findData);
+                      if (findData.value !== false) {
+                          if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                              $scope.pageInfo.lastpage = findData.data.totalpages;
+                              $scope.pageInfo.pagenumber = findData.data.pagenumber;
+                              $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                              $scope.json.tableData = findData.data.data;
+                          } else {
+                              $scope.json.tableData = [];
+                          }
+                      } else {
+                          $scope.json.tableData = [];
+                      }
+                      console.log($scope.pagination);
+                  }, function() {
+                      console.log("Fail");
+                  });
+                }
+
             };
             $scope.getMoreResults();
         }
